@@ -1,1 +1,5 @@
-@import url('./utils/reset.scss');
+@import './utils/reset';
+@import './utils/vars/colors.scss';
+@import './utils/global';
+@import './components/BackgroundComponent/BackgroundComponentStyles.scss';
+@import './components/MenuComponent/MenuComponentStyles';

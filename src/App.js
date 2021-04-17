@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./main.scss"
+import HomeComponent from "./components/HomeComponent/HomeComponent";
 
 const App = () => {
     return (
-        <div>hello world</div>
+        <>
+            <HomeComponent />
+        </>
     )
 }
 
