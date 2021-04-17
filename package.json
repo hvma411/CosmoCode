@@ -1,38 +1,61 @@
 {
-  "name": "cosmo-code-v2",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.1"
-  },
+  "name": "cosmocode",
+  "version": "2.0.0",
+  "description": "",
+  "main": "App.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server --hot -d",
+    "build": "webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "author": "Kamil Nosek",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.10.3",
+    "@babel/preset-env": "^7.4.1",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.7.4",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-minify-dead-code-elimination": "^0.5.1",
+    "css-loader": "^3.4.2",
+    "file-loader": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-connect": "^5.7.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-node-externals": "^2.5.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "@babel/runtime": "^7.10.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.29",
+    "@fortawesome/free-brands-svg-icons": "^5.13.1",
+    "@fortawesome/free-solid-svg-icons": "^5.13.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "babel-preset-react": "^6.24.1",
+    "firebase": "^7.15.0",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-fontawesome": "^1.7.1",
+    "react-icons": "^3.10.0",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scroll": "^1.8.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "url-loader": "^4.1.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "engines": {
+    "node": "12"
   }
 }
