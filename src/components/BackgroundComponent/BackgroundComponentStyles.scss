@@ -39,7 +39,7 @@
     border: 1px solid white;
     z-index: 1;
 
-    top: 150px;
+    bottom: -400px;
     right: -450px;
     transform-style: preserve-3d;
 
@@ -107,7 +107,7 @@
 }
 
 .border {
-    border: 1px solid white;
+    border: 1px dotted white;
 }
 
 .circle {
@@ -187,65 +187,65 @@
     transform: rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 144deg);
 }
 
-@keyframes orbit-rotate {
-    0% {
-        transform: rotateX(75deg) rotateY(25deg) rotate(0deg);
-    }
-    100% {
-        transform: rotateX(75deg) rotateY(25deg) rotate(360deg);
-    }
-}
+// @keyframes orbit-rotate {
+//     0% {
+//         transform: rotateX(75deg) rotateY(25deg) rotate(0deg);
+//     }
+//     100% {
+//         transform: rotateX(75deg) rotateY(25deg) rotate(360deg);
+//     }
+// }
 
-@keyframes cover-planet-rotate {
-    0% {
-        transform: rotateX(75deg) rotateY(25deg) rotate(0deg);
-        z-index: 0;
-        visibility: hidden;
-    }
-    15% {
-        z-index: 0;
-        visibility: hidden;
-    }
-    30% {
-        z-index: 0;
-        visibility: hidden;
-    }
-    50% {
-        z-index: 0;
-        visibility: hidden;
-    }
-    70% {
-        z-index: 155;
-        visibility: visible;
+// @keyframes cover-planet-rotate {
+//     0% {
+//         transform: rotateX(75deg) rotateY(25deg) rotate(0deg);
+//         z-index: 0;
+//         visibility: hidden;
+//     }
+//     15% {
+//         z-index: 0;
+//         visibility: hidden;
+//     }
+//     30% {
+//         z-index: 0;
+//         visibility: hidden;
+//     }
+//     50% {
+//         z-index: 0;
+//         visibility: hidden;
+//     }
+//     70% {
+//         z-index: 155;
+//         visibility: visible;
 
-    }
-    90% {
-        z-index: 155;
-    }
-    95% {
-        z-index: 155;
-        visibility: visible;
+//     }
+//     90% {
+//         z-index: 155;
+//     }
+//     95% {
+//         z-index: 155;
+//         visibility: visible;
 
-    }
-    96% {
-        z-index: 0;
-    }
-    100% {
-        transform: rotateX(75deg) rotateY(25deg) rotate(360deg);
-        z-index: 0;
-    }
-}
+//     }
+//     96% {
+//         z-index: 0;
+//     }
+//     100% {
+//         transform: rotateX(75deg) rotateY(25deg) rotate(360deg);
+//         z-index: 0;
+//     }
+// }
 
-@keyframes animateSphere {
-    0% {
-        transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
-    }
+// @keyframes animateSphere {
+//     0% {
+//         transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+//     }
 
-    50% {
-        transform: rotateY(360deg) rotateX(360deg) rotateZ(0deg);
-    }
+//     50% {
+//         transform: rotateY(360deg) rotateX(360deg) rotateZ(0deg);
+//     }
 
-    100% {
-        transform: rotateY(720deg) rotateX(720deg) rotateZ(0deg);
-    }
-}
+//     100% {
+//         transform: rotateY(720deg) rotateX(720deg) rotateZ(0deg);
+//     }
+// }
