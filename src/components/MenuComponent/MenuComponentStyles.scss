@@ -16,6 +16,7 @@
         flex-direction: column-reverse;
         justify-content: flex-start;
         align-items: center;
+        z-index: 1;
 
         .nav-item {
             display: flex;
@@ -112,7 +113,6 @@
         left: 0;
         top: 50%;
         transform: translateY(-50%);
-        transition: background-color .1s .1s linear;
         z-index: 99;
       }
       .hamburger__inner--animated {
@@ -151,23 +151,8 @@
     100% { width: 35px; }
 }
 
-// .hamburger-menu--btn:hover .hamburger__inner {
-//     animation: hamburger-line-bigger-in .1s;
-//     width: 35px;
-// }
 
-// .hamburger-menu--btn:hover .hamburger__inner::before {
-//     transform: translateX(17px);
-//     transition: transform .1s linear;
-
-// }
-
-// .hamburger-menu--btn:hover .hamburger__inner::after {
-//     animation: hamburger-line-smaller-in .1s;
-//     width: 0px;
-//  }
-
- .hamburger--active {
+ .menu--active {
     .hamburger__inner::after {
         animation: hamburger-line-smaller-in .1s;
         width: 0px;
@@ -182,8 +167,23 @@
     }
  }
 
- .hamburger--inActive {
+ .menu--inActive {
     .hamburger__inner::after {
         animation: hamburger-line-smaller-out .1s;
-      }
+    }
+    .hamburger__inner {
+        animation: hamburger-line-bigger-out .2s;
+        width: 25px;
+    }
  }
+
+ .hamburger-menu {    
+    &--active {
+        transition: transform .2s linear;
+        transform: translateX(0);
+    }
+    &--inActive {
+        transition: transform .2s linear;
+        transform: translateX(-100px);
+    }
+}

@@ -5,12 +5,12 @@ const MenuComponent = () => {
     const [isMenuVisible, setIsMenuVisible] = useState(true);
 
     return (
-        <nav className="nav-sidebar">
+        <nav className="nav-sidebar hamburger-menu">
             <HamburgerMenuBtn 
                 isMenuVisible={ isMenuVisible } 
                 setIsMenuVisible={ setIsMenuVisible }
             />
-            <ul className="nav-wrapper">
+            <ul className={`nav-wrapper ${ isMenuVisible ? "hamburger-menu--active" : "hamburger-menu--inActive"}`}>
                 <li className="nav-item">
                     <i className="home-ico"></i>
                     <span>HOME</span>
@@ -35,11 +35,9 @@ const MenuComponent = () => {
 
 const HamburgerMenuBtn = ({ isMenuVisible, setIsMenuVisible }) => {
 
-
     return (
-        <div className={`hamburger-menu--btn ${ isMenuVisible ? "hamburger--active" : "hamburger--inActive"}`}
+        <div className={`hamburger-menu--btn ${ isMenuVisible ? "menu--active" : "menu--inActive"}`}
             onClick={() => setIsMenuVisible(!isMenuVisible)}>
-
             <div className={`hamburger__inner`}></div>
         </div>
     )
