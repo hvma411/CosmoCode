@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const MenuComponent = () => {
 
@@ -11,22 +12,30 @@ const MenuComponent = () => {
                 setIsMenuVisible={ setIsMenuVisible }
             />
             <ul className={`nav-wrapper ${ isMenuVisible ? "hamburger-menu--active" : "hamburger-menu--inActive"}`}>
-                <li className="nav-item">
-                    <i className="home-ico"></i>
-                    <span>HOME</span>
-                </li>
-                <li className="nav-item">
-                    <i className="about-ico"></i>
-                    <span>ABOUT</span>
-                </li>
-                <li className="nav-item">
-                    <i className="portfolio-ico"></i>
-                    <span>PROJECTS</span>
-                </li>
-                <li className="nav-item">
-                    <i className="contact-ico"></i>
-                    <span>CONTACT</span>
-                </li>
+                <NavLink to="/">
+                    <li className="nav-item">
+                        <i className="home-ico"></i>
+                        <span>HOME</span>
+                    </li>
+                </NavLink>
+                <NavLink to="/about">
+                    <li className="nav-item">
+                        <i className="about-ico"></i>
+                        <span>ABOUT</span>
+                    </li>
+                </NavLink>
+                <NavLink to="/portfolio">
+                    <li className="nav-item">
+                        <i className="portfolio-ico"></i>
+                        <span>PORTFOLIO</span>
+                    </li>
+                </NavLink>
+                <NavLink to="/contact">
+                    <li className="nav-item">
+                        <i className="contact-ico"></i>
+                        <span>CONTACT</span>
+                    </li>
+                </NavLink>
             </ul>
             {/* <div className="nav-sidebar--line"></div> */}
         </nav>

@@ -1,13 +1,14 @@
 import React from "react";
 import BackgroundComponent from "../BackgroundComponent/BackgroundComponent";
 import MenuComponent from "../MenuComponent/MenuComponent";
+import HomeContent from "./HomeContent/HomeContent";
 
 const HomeComponent = () => {
     return (
-        <section className="container">
-            <MenuComponent />
+        <div>
+            <HomeContent />
             <BackgroundComponent />
-        </section>
+        </div>
     )
 }
 

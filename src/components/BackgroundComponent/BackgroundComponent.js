@@ -2,7 +2,7 @@ import React from "react";
 
 const BackgroundComponent = () => {
     return (
-        <div className="planets-system">
+        <div className="planets-system router-transition">
             <Planet planet="main-planet" />
             <div className="orbit-wrapper">
                 <div className="orbit1">

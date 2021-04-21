@@ -36,7 +36,7 @@
     height: 1250px;
     position: absolute;
     border-radius: 50%;
-    border: 1px solid white;
+    border: 3px solid white;
     z-index: 1;
 
     bottom: -400px;
@@ -86,7 +86,7 @@
 .partial-orbit1::before {
     box-sizing: border-box;
     display: block;
-    border: solid 1px white;
+    border: solid 3px white;
     width: 200%;
     height: 200%;
     border-radius: 50%;
@@ -107,7 +107,7 @@
 }
 
 .border {
-    border: 1px dotted white;
+    border: 3px solid white;
 }
 
 .circle {

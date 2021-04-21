@@ -1,5 +1,8 @@
 @import './utils/reset';
-@import './utils/vars/colors.scss';
+@import './utils/vars/colors';
 @import './utils/global';
-@import './components/BackgroundComponent/BackgroundComponentStyles.scss';
+@import './components/BackgroundComponent/BackgroundComponentStyles';
 @import './components/MenuComponent/MenuComponentStyles';
+@import './components/HomeComponent/HomeContent/HomeContent';
+@import './components/FooterButHeaderComponent/FooterButHeaderComponent';
+@import './components/AboutComponent/AboutComponent'
