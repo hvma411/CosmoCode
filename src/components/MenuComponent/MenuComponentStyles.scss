@@ -40,6 +40,8 @@
             margin-top: 10px;
             border-radius: 15px;
             text-decoration: none;
+            transition: background .2s linear;
+
 
             i {
                 display: block;
@@ -49,7 +51,7 @@
                 background-repeat: no-repeat;
                 background-position: center;
                 margin-bottom: 10px;
-                transition: transform .2s;
+                transition: transform .2s linear;
             }
 
             span {
@@ -77,14 +79,17 @@
         }
 
         .nav-item:hover {
+            transition: background .2s linear;
             background: $btn-hover-color;
         }
 
         .nav-item:hover i {
+            transition: transform .2s linear;
             transform: scale(1.2);
         }
 
         .nav-item:hover .about-ico {
+            transition: transform .2s linear;
             transform: scale(1.4);
         }
     }

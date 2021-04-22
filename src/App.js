@@ -11,28 +11,24 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import AboutComponent from "./components/AboutComponent/AboutComponent";
 const App = () => {
 
-    useEffect(() => {
-        console.log('ah')
-    })
-
     return (
         <main className="container">
             <BrowserRouter>
                 <MenuComponent />
                 <div className="content-container">
                     <Route render={({ location }) => (
-                        // <TransitionGroup>
-                        //     <CSSTransition
-                        //         key={ location.key }
-                        //         timeout={ 450 }
-                        //         classNames="fade"
-                        //     >
+                        <TransitionGroup>
+                            <CSSTransition
+                                key={ location.key }
+                                timeout={ 450 }
+                                classNames="fade"
+                            >
                                 <Switch location={ location }>
                                     <Route exact path="/" component={ HomeComponent } />
                                     <Route path="/about" component={ AboutComponent } />
                                 </Switch>
-                        //     </CSSTransition>
-                        // </TransitionGroup>
+                            </CSSTransition>
+                        </TransitionGroup>
                     )} />
                 </div>
             </BrowserRouter>

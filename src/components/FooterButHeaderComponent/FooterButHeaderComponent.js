@@ -5,7 +5,7 @@ import React from "react";
 const FooterButHeaderComponent = () => {
     return (
         <footer className="footer-but-header">
-            {/* <h3>DESIGNED WITH LOVE TO MINIMALISM AND SPACE</h3> */}
+            <h3>DESIGNED & DEVELOPED WITH LOVE TO MINIMALISM AND SPACE</h3>
             <ul className="social-media">
                 <li className="social-media--icon">
                     <a href="https://www.facebook.com/">
