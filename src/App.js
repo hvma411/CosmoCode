@@ -8,7 +8,7 @@ import MenuComponent from "./components/MenuComponent/MenuComponent";
 import BackgroundComponent from "./components/BackgroundComponent/BackgroundComponent";
 import FooterButHeaderComponent from "./components/FooterButHeaderComponent/FooterButHeaderComponent";
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import AboutComponent from "./components/AboutComponent/AboutComponent";
+import AboutComponent from "./components/AboutComponent/AboutComponent.js";
 const App = () => {
 
     return (

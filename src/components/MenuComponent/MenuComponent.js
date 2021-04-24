@@ -12,25 +12,25 @@ const MenuComponent = () => {
                 setIsMenuVisible={ setIsMenuVisible }
             />
             <ul className={`nav-wrapper ${ isMenuVisible ? "hamburger-menu--active" : "hamburger-menu--inActive"}`}>
-                <NavLink to="/">
+                <NavLink activeClassName="nav-item--active" exact to="/">
                     <li className="nav-item">
                         <i className="home-ico"></i>
                         <span>HOME</span>
                     </li>
                 </NavLink>
-                <NavLink to="/about">
+                <NavLink activeClassName="nav-item--active" exact to="/about">
                     <li className="nav-item">
                         <i className="about-ico"></i>
                         <span>ABOUT</span>
                     </li>
                 </NavLink>
-                <NavLink to="/portfolio">
+                <NavLink activeClassName="nav-item--active" exact to="/portfolio">
                     <li className="nav-item">
                         <i className="portfolio-ico"></i>
                         <span>PORTFOLIO</span>
                     </li>
                 </NavLink>
-                <NavLink to="/contact">
+                <NavLink activeClassName="nav-item--active" exact to="/contact">
                     <li className="nav-item">
                         <i className="contact-ico"></i>
                         <span>CONTACT</span>

@@ -85,13 +85,23 @@ h3 {
         align-items: center;
         width: 100%;
         height: auto;
-        // padding: 120px;
-        // padding-right: 60px;
         color: $txt-color;
+        position: relative;
     }
 
     .content {
         max-width: 400px;
+        position: absolute;
+    }
+
+    .content--active {
+        opacity: 1;
+        transition: opacity .3s .2s linear; 
+    }
+
+    .content--inActive {
+        opacity: 0;
+        transition: opacity .2s linear;
     }
 
     h2 {
@@ -99,7 +109,6 @@ h3 {
     }
 
     h3 {
-        font-weight: 300;
         line-height: 1.3rem;
         margin-bottom: 15px;
     }
