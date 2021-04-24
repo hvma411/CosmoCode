@@ -8,12 +8,8 @@ import MenuComponent from "./components/MenuComponent/MenuComponent";
 import BackgroundComponent from "./components/BackgroundComponent/BackgroundComponent";
 import FooterButHeaderComponent from "./components/FooterButHeaderComponent/FooterButHeaderComponent";
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import AboutComponent from "./components/AboutComponent/AboutComponent";
+import AboutComponent from "./components/AboutComponent/AboutComponent.js";
 const App = () => {
-
-    useEffect(() => {
-        console.log('ah')
-    })
 
     return (
         <main className="container">
@@ -21,18 +17,18 @@ const App = () => {
                 <MenuComponent />
                 <div className="content-container">
                     <Route render={({ location }) => (
-                        // <TransitionGroup>
-                        //     <CSSTransition
-                        //         key={ location.key }
-                        //         timeout={ 450 }
-                        //         classNames="fade"
-                        //     >
+                        <TransitionGroup>
+                            <CSSTransition
+                                key={ location.key }
+                                timeout={ 450 }
+                                classNames="fade"
+                            >
                                 <Switch location={ location }>
                                     <Route exact path="/" component={ HomeComponent } />
                                     <Route path="/about" component={ AboutComponent } />
                                 </Switch>
-                        //     </CSSTransition>
-                        // </TransitionGroup>
+                            </CSSTransition>
+                        </TransitionGroup>
                     )} />
                 </div>
             </BrowserRouter>
