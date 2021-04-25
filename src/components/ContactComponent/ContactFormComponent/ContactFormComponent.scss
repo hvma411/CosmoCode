@@ -1,0 +1,118 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $rev-bg-color;
+    padding: 20px;
+    border-radius: 15px;
+    width: 350px;
+}
+
+.contact-form--title {
+    color: $rev-txt-color;
+    font-weight: 400;
+    margin-bottom: 40px;
+}
+
+.input-group {
+    position: relative;
+    padding: 10px 0 0;
+    margin-top: 10px;
+}
+
+input,
+textarea,
+button {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 7px 0 3px 0;
+    border: none;
+    border-bottom: 1px solid $btn-hover-color;
+    margin-bottom: 10px;
+    background: transparent;
+    resize: none;
+    outline: none;
+}
+
+input,
+textarea {
+    font-weight: 400;
+    &::placeholder {
+        color: transparent;
+    }
+    &:placeholder-shown ~ .form-label {
+        font-size: 1rem;
+        cursor: text;
+        top: 20px;
+    }
+}
+
+input:focus ~ .form-label,
+textarea:focus ~ .form-label {
+    position: absolute;
+    font-size: 0.7rem;
+    top: -2px;
+}
+
+.form-label {
+    position: absolute;
+    top: -2px;
+    display: block;
+    transition: 0.2s;
+    font-size: 0.7rem;
+    color: $btn-hover-color;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+button {
+    background: $btn-hover-color;
+    color: $txt-color;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: $rev-txt-color;
+    box-shadow: 0 0 0px 1000px white inset;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+input:-moz-autofill {
+    -moz-text-fill-color: $rev-txt-color;
+    box-shadow: 0 0 0px 1000px white inset;
+    -moz-box-shadow: 0 0 0px 1000px white inset;
+}
+input:-o-autofill {
+    -o-text-fill-color: $rev-txt-color;
+    box-shadow: 0 0 0px 1000px white inset;
+    -o-box-shadow: 0 0 0px 1000px white inset;
+}
+input:-khtml-autofill {
+    -khtml-text-fill-color: $rev-txt-color;
+    box-shadow: 0 0 0px 1000px white inset;
+    -khtml-box-shadow: 0 0 0px 1000px white inset;
+}
+
+input:focus:-webkit-autofill {
+    -webkit-text-fill-color: $rev-txt-color;
+    box-shadow: 0 0 0px 1000px white inset;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+input:focus:-moz-autofill {
+    -moz-text-fill-color: $rev-txt-color;
+    box-shadow: 0 0 0px 1000px white inset;
+    -moz-box-shadow: 0 0 0px 1000px white inset;
+}
+input:focus:-o-autofill {
+    -o-text-fill-color: $rev-txt-color;
+    box-shadow: 0 0 0px 1000px white inset;
+    -o-box-shadow: 0 0 0px 1000px white inset;
+}
+input:focus:-khtml-autofill {
+    -khtml-text-fill-color: $rev-txt-color;
+    box-shadow: 0 0 0px 1000px white inset;
+    -khtml-box-shadow: 0 0 0px 1000px white inset;
+}

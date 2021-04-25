@@ -10,6 +10,7 @@ import FooterButHeaderComponent from "./components/FooterButHeaderComponent/Foot
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import AboutComponent from "./components/AboutComponent/AboutComponent.js";
 import PortfolioComponent from "./components/PortfolioComponent/PortfolioComponent";
+import ContactComponent from "./components/ContactComponent/ContactComponent";
 const App = () => {
 
     return (
@@ -28,6 +29,7 @@ const App = () => {
                                     <Route exact path="/" component={ HomeComponent } />
                                     <Route path="/about" component={ AboutComponent } />
                                     <Route path="/portfolio" component={ PortfolioComponent } />
+                                    <Route path="/contact" component={ ContactComponent } />
                                 </Switch>
                             </CSSTransition>
                         </TransitionGroup>
