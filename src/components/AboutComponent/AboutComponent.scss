@@ -39,11 +39,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 120px;
+    padding-right: 20px;
 
     &--element {
         margin-top: 15px;
         border-radius: 15px;
-        min-width: 350px;
+        width: 320px;
         padding: 20px;
         color: $txt-color;
         cursor: pointer;
@@ -80,17 +82,20 @@ h3 {
 
     .content-wrapper {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         width: 100%;
         height: auto;
+        min-height: 400px;
+        padding-right: 120px;
         color: $txt-color;
         position: relative;
     }
 
     .content {
-        max-width: 400px;
+        max-width: 420px;
         position: absolute;
+        padding-left: 20px;
     }
 
     .content--active {
