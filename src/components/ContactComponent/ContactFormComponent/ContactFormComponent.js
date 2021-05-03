@@ -16,6 +16,10 @@ const ContactFormComponent = () => {
                 <textarea name="message" id="message" placeholder="Feel free to ask me anything" />
                 <label htmlFor="message" className="form-label">Feel free to ask me anything</label>
             </div>
+            <div className="privacy-policy--wrapper">
+                <input type="checkbox" className="privacy-policy" />
+                <span className="info">I agree with privacy policy.</span>
+            </div>
             <button className="submit-btn">Send message</button>
         </form>
     )

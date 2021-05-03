@@ -8,7 +8,7 @@
     padding: 0 120px 0 120px;
 
     .content-wrapper {
-        width: 50%;
+        width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
@@ -18,6 +18,10 @@
 
     .contact-form-wrapper {
         justify-content: flex-end;
+    }
+    .contact-info-wrapper {
+        // background: $btn-hover-color;
+        padding: 20px;
     }
 }
 
