@@ -94,7 +94,7 @@ const AboutComponent = () => {
                         data-content="experience"
                     >
                         <h2>EXPERIENCE & SKILLS</h2>
-                        <h3>What I like? Who would I like to be?</h3>
+                        <h3>Story of my experience and skills</h3>
                     </li>
                 </ul>
             </div>
