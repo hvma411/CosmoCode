@@ -3,6 +3,7 @@
     height: 100%;
     display: flex;
     justify-content: space-between;
+    padding: 0 60px;
     align-items: center;
 }
 
@@ -22,7 +23,6 @@
     background-repeat: no-repeat;
 }
 .photo-separator {
-    // background: $btn-hover-color;
     padding-left: 120px; 
     height: 100%;
 }
@@ -39,8 +39,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 120px;
-    padding-right: 20px;
 
     &--element {
         margin-top: 15px;
@@ -82,12 +80,11 @@ h3 {
 
     .content-wrapper {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
         align-items: center;
         width: 100%;
         height: auto;
         min-height: 400px;
-        padding-right: 120px;
         color: $txt-color;
         position: relative;
     }
