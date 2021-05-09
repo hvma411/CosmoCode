@@ -3,7 +3,7 @@ import React from "react";
 const ContactFormComponent = () => {
     return (
         <form className="contact-form">
-            <h2 className="contact-form--title">Feel free to text me</h2>
+            {/* <h2 className="contact-form--title">Feel free to text me</h2> */}
             <div className="input-group">
                 <input type="text" name="name" id="name" placeholder="What is your name?" />
                 <label htmlFor="name" className="form-label">What is your name?</label>
@@ -16,11 +16,10 @@ const ContactFormComponent = () => {
                 <textarea name="message" id="message" placeholder="Feel free to ask me anything" />
                 <label htmlFor="message" className="form-label">Feel free to ask me anything</label>
             </div>
-            <div className="privacy-policy--wrapper">
-                <input type="checkbox" className="privacy-policy" />
-                <span className="info">I agree with privacy policy.</span>
-            </div>
             <button className="submit-btn">Send message</button>
+            <div className="privacy-policy--wrapper">
+                <span className="info">By clicking "Send Message" you agree with Privacy Policy.</span>
+            </div>
         </form>
     )
 }
