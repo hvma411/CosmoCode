@@ -177,7 +177,7 @@
      .hamburger-menu {    
         &--active {
             transition: transform .1s linear;
-            transform: translateX(0);
+            transform: translateX(10px);
         }
         &--inActive {
             transition: transform .1s linear;

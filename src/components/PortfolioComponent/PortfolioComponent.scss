@@ -1,50 +1,151 @@
-.portfolio-component {
-    width: 100%;
-    height: 100%;
-    padding: 60px 120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media screen and (min-width: 260px) {
+    .portfolio-component {
+        width: 100%;
+        height: 100%;
+        padding: 60px 20px 60px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // position: relative;
+    }
+    
+    .projects-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .projects-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        padding-bottom: 10px;
+        
+        position: absolute;
+        bottom: 10px;
+
+
+        .web {
+            background: url(/src/utils/assets/icons/icons8-browser-windows-64.png);
+        }
+        .art {
+            background: url(/src/utils/assets/icons/icons8-fill-color-50.png);
+        }
+
+        .nav-ico {
+            width: 25px;
+            height: 25px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .left-arrow {
+            background: url(/src/utils/assets/icons/chevron-left-solid.svg);
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+        .right-arrow {
+            background: url(/src/utils/assets/icons/chevron-right-solid.svg);
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+    }
+    
+    .project-box {
+        width: 100%;
+        max-width: 350px;
+        background: $btn-hover-color;
+        border-radius: 15px;
+    }
+    
+    .projects-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        max-width: 350px;
+        padding: 10px;
+        padding-top: 0;
+        padding-bottom: 0;
+    
+        .project-box {
+            height: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
 }
 
-.projects-wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;;
-    justify-content: center;
-    align-items: center;
+@media screen and (min-width: 768px) {
+    .portfolio-component {
+        padding: 60px 80px;
+    }
+
+    .projects-wrapper {
+        flex-direction: row;
+    }
+
+    .projects-column {
+        .project-box:nth-child(1) {
+            height: calc(60% - 20px);
+        }
+        .project-box:nth-child(2) {
+            height: 40%;
+        }
+    }
+
+    .reverse-column {
+        .project-box:nth-child(1) {
+            height: 40%;
+        }
+        .project-box:nth-child(2) {
+            height: calc(60% - 20px);
+        }
+    }   
+
+    .projects-nav {
+        width: auto;
+        height: auto;
+        bottom: 0px;
+    }
+
 }
 
-.project-box {
-    width: 100%;
-    max-width: 350px;
-    background: $btn-hover-color;
-    border-radius: 15px;
-}
+@media screen and (min-width: 1024px) {
+    .portfolio-component {
+        padding: 60px 120px;
+    }
 
-.projects-column {
-    width: 100%;
-    height: 100%;
-    max-width: 350px;
-    padding: 10px;
-    padding-top: 0;
-    padding-bottom: 0;
+    .projects-wrapper {
+        flex-direction: row;
+    }
+    
+    .projects-column {
+        .project-box:nth-child(1) {
+            height: calc(60% - 20px);
+        }
+        .project-box:nth-child(2) {
+            height: 40%;
+        }
+    }
 
-    .project-box:nth-child(1) {
-        height: calc(60% - 20px);
-        margin-bottom: 20px;
-    }
-    .project-box:nth-child(2) {
-        height: 40%;
-    }
-}
-
-.reverse-column {
-    .project-box:nth-child(1) {
-        height: 40%;
-        margin-bottom: 20px;
-    }
-    .project-box:nth-child(2) {
-        height: calc(60% - 20px);
-    }
+    .reverse-column {
+        .project-box:nth-child(1) {
+            height: 40%;
+        }
+        .project-box:nth-child(2) {
+            height: calc(60% - 20px);
+        }
+    }   
 }
