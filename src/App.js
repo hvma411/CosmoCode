@@ -13,6 +13,18 @@ import PortfolioComponent from "./components/PortfolioComponent/PortfolioCompone
 import ContactComponent from "./components/ContactComponent/ContactComponent";
 const App = () => {
 
+    const appHeight = () => {
+        const doc = document.documentElement
+        doc.style.setProperty('--vh', (window.innerHeight * .01) + 'px');
+    }
+
+
+    useEffect(() => {
+        window.addEventListener('resize', appHeight);
+        appHeight()
+        screen.orientation.lock();
+    }, [])
+
     return (
         <main className="container">
             <BrowserRouter>
@@ -21,15 +33,15 @@ const App = () => {
                     <Route render={({ location }) => (
                         <TransitionGroup>
                             <CSSTransition
-                                key={ location.key }
-                                timeout={ 450 }
+                                key={location.key}
+                                timeout={450}
                                 classNames="fade"
                             >
-                                <Switch location={ location }>
-                                    <Route exact path="/" component={ HomeComponent } />
-                                    <Route path="/about" component={ AboutComponent } />
-                                    <Route path="/portfolio" component={ PortfolioComponent } />
-                                    <Route path="/contact" component={ ContactComponent } />
+                                <Switch location={location}>
+                                    <Route exact path="/" component={HomeComponent} />
+                                    <Route path="/about" component={AboutComponent} />
+                                    <Route path="/portfolio" component={PortfolioComponent} />
+                                    <Route path="/contact" component={ContactComponent} />
                                 </Switch>
                             </CSSTransition>
                         </TransitionGroup>

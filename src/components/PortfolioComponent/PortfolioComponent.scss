@@ -7,7 +7,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        // position: relative;
     }
     
     .projects-wrapper {
@@ -130,7 +129,7 @@
     .projects-wrapper {
         flex-direction: row;
     }
-    
+
     .projects-column {
         .project-box:nth-child(1) {
             height: calc(60% - 20px);

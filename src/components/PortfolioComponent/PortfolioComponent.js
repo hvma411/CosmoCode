@@ -103,7 +103,6 @@ const TabletView = () => {
     const [projectsType, setProjectsType] = useState("web");
 
     const changeType = (e) => {
-
         if (e.currentTarget.id === "web") {
             setProjectsType("web");
         } else {

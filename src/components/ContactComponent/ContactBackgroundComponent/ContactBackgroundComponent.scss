@@ -1,153 +1,167 @@
-.solar-system {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    transform: scale(0.5);
-}
-
-@mixin planet($width, $height) {
-    background: $btn-hover-color;
-    border-radius: 50%;
-    border: 3px solid $bg-color;
-    width: $width;
-    height: $height;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-@mixin orbit($width, $height, $time) {
-    border-radius: 50%;
-    border: 2px solid $btn-hover-color;
-    width: $width;
-    height: $height;
-    animation: planet-rotation $time linear infinite;
-    position: absolute;
-
-    @keyframes planet-rotation {
-        0% { transform: rotate(0); }
-        100% { transform: rotate(360deg); }
-    }
-}
-
-@keyframes planet-rotation {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.orbit-position {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@for $i from 1 through 9 {
-    .orbit-position:nth-child(#{$i}) {
-        transform: rotate(50deg * $i);
-    }
-}
-
-.sun {
-    @include planet(210px, 210px);
-}
-
-.mercury-orbit {
-    @include orbit(280px, 280px, 3s);
+@media screen and (min-width: 260px) {
+    .solar-system {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 30px;
+        left: 0;
     
-
-    .mercury {
-        @include planet(18px, 18px);
-        left: -9px;
-    }
-}
-
-.venus-orbit {
-    @include orbit(350px, 350px, 7s);
-
-    .venus {
-        @include planet(20px, 20px);
-        left: -10px;
-    }
-}
-
-.earth-orbit {
-    @include orbit (420px, 420px, 10s);
-
-    .earth {
-        @include planet(25px, 25px);
-        left: -13px;
-    }
-}
-
-.mars-orbit {
-    @include orbit (500px, 500px, 19s);
-
-    .mars {
-        @include planet(35px, 35px);
-        left: -18px;
-        background: $mars-color;
-    }
-}
-
-.jupiter-orbit {
-    @include orbit(600px, 600px, 100s);
-
-    .jupiter {
-        @include planet(45px, 45px);
-        left: -23px;
-    
-    }
-}
-
-.saturn-orbit {
-    @include orbit (710px, 710px, 180s);
-
-    .saturn {
-        @include planet(53px, 53px);
-        left: -27px;
         display: flex;
         justify-content: center;
         align-items: center;
-        animation: planet-rotation 180s linear infinite reverse;
-
-
-        &--ring {
-            position: absolute;
-            width: 68px;
-            height: 5px;
-            border-radius: 35%;
-            border-right: 2px solid $bg-color;
-            border-left: 2px solid $bg-color;
-            background: $btn-hover-color;
+    
+        transform: scale(0.3);
+    }
+    
+    @mixin planet($width, $height) {
+        background: $btn-hover-color;
+        border-radius: 50%;
+        border: 3px solid $bg-color;
+        width: $width;
+        height: $height;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    
+    @mixin orbit($width, $height, $time) {
+        border-radius: 50%;
+        border: 2px solid $btn-hover-color;
+        width: $width;
+        height: $height;
+        animation: planet-rotation $time linear infinite;
+        position: absolute;
+    
+        @keyframes planet-rotation {
+            0% { transform: rotate(0); }
+            100% { transform: rotate(360deg); }
+        }
+    }
+    
+    @keyframes planet-rotation {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    
+    .orbit-position {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @for $i from 1 through 9 {
+        .orbit-position:nth-child(#{$i}) {
+            transform: rotate(50deg * $i);
+        }
+    }
+    
+    .sun {
+        @include planet(210px, 210px);
+    }
+    
+    .mercury-orbit {
+        @include orbit(280px, 280px, 3s);
+        
+    
+        .mercury {
+            @include planet(18px, 18px);
+            left: -9px;
+        }
+    }
+    
+    .venus-orbit {
+        @include orbit(350px, 350px, 7s);
+    
+        .venus {
+            @include planet(20px, 20px);
+            left: -10px;
+        }
+    }
+    
+    .earth-orbit {
+        @include orbit (420px, 420px, 10s);
+    
+        .earth {
+            @include planet(25px, 25px);
+            left: -13px;
+        }
+    }
+    
+    .mars-orbit {
+        @include orbit (500px, 500px, 19s);
+    
+        .mars {
+            @include planet(35px, 35px);
+            left: -18px;
+            background: $mars-color;
+        }
+    }
+    
+    .jupiter-orbit {
+        @include orbit(600px, 600px, 100s);
+    
+        .jupiter {
+            @include planet(45px, 45px);
+            left: -23px;
+        
+        }
+    }
+    
+    .saturn-orbit {
+        @include orbit (710px, 710px, 180s);
+    
+        .saturn {
+            @include planet(53px, 53px);
+            left: -27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: planet-rotation 180s linear infinite reverse;
+    
+    
+            &--ring {
+                position: absolute;
+                width: 68px;
+                height: 5px;
+                border-radius: 35%;
+                border-right: 2px solid $bg-color;
+                border-left: 2px solid $bg-color;
+                background: $btn-hover-color;
+            }
+        }
+    }
+    
+    .uranus-orbit {
+        @include orbit (830px, 830px, 600s);
+    
+        .uranus {
+            @include planet(50px, 50px);
+            left: -25px;
+        }
+    }
+    .neptune-orbit {
+        @include orbit (940px, 940px, 900s);
+    
+        .neptune {
+            @include planet(40px, 40px);
+            left: -20px;
         }
     }
 }
 
-.uranus-orbit {
-    @include orbit (830px, 830px, 600s);
-
-    .uranus {
-        @include planet(50px, 50px);
-        left: -25px;
-    }
-}
-.neptune-orbit {
-    @include orbit (940px, 940px, 900s);
-
-    .neptune {
-        @include planet(40px, 40px);
-        left: -20px;
+@media screen and (min-width: 760px) {
+    .solar-system {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 100px;
+        left: 0;
+    
+        transform: scale(0.65);
     }
 }

@@ -1,145 +1,157 @@
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    // background: $bg-color;
-    color: $txt-color;
-    padding: 20px;
-    border-radius: 15px;
-    width: 100%;
-}
-
-.contact-form--title {
-    color: $txt-color;
-    font-weight: 400;
-    margin-bottom: 40px;
-}
-
-.input-group {
-    width: 100%;
-    position: relative;
-    padding: 10px 0 0;
-    margin-top: 15px;
-}
-
-.privacy-policy--wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    margin-top: 10px;
-
-    input {
-        width: auto;
-        padding: 0;
-        margin: 0;
-        margin-right: 10px;
-        width: 25px;
-        height: 25px;
+@media screen and (min-width: 260px) {
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        color: $txt-color;
+        padding: 5px;
         border-radius: 15px;
+        width: 100%;
     }
-}
-
-input,
-textarea,
-button {
-    color: $txt-color;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    width: 100%;
-    padding: 7px 0 3px 0;
-    border: none;
-    border-bottom: 1px solid $txt-color;
-    margin-bottom: 10px;
-    background: transparent;
-    resize: none;
-    outline: none;
-}
-
-input,
-textarea {
-    font-weight: 200;
-    &::placeholder {
-        color: transparent;
+    
+    .contact-form--title {
+        color: $txt-color;
+        font-weight: 400;
+        margin-bottom: 40px;
     }
-    &:placeholder-shown ~ .form-label {
+    
+    .input-group {
+        width: 100%;
+        position: relative;
+        padding: 10px 0 0;
+        // margin-top: 15px;
+        margin-top: 10px;
+    }
+    
+    .privacy-policy--wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+        font-size: 0.6rem;
+    }
+    
+    input,
+    textarea,
+    button {
+        color: $txt-color;
+        // font-size: 1.2rem;
         font-size: 1rem;
-        cursor: text;
-        top: 20px;
+        letter-spacing: 1px;
+        width: 100%;
+        // padding: 7px 0 3px 0;
+        padding: 5px 0 3px 3;
+        border: none;
+        border-bottom: 1px solid $txt-color;
+        // margin-bottom: 10px;
+        margin-bottom: 8px;
+        background: transparent;
+        resize: none;
+        outline: none;
+    }
+    
+    input,
+    textarea {
+        font-weight: 200;
+        &::placeholder {
+            color: transparent;
+        }
+        &:placeholder-shown ~ .form-label {
+            font-size: 1rem;
+            cursor: text;
+            // top: 20px;
+            top: 18px;
+        }
+    }
+    
+    input:focus ~ .form-label,
+    textarea:focus ~ .form-label {
+        position: absolute;
+        font-size: 0.7rem;
+        top: -2px;
+    }
+    
+    .form-label {
+        position: absolute;
+        top: -2px;
+        display: block;
+        transition: 0.2s;
+        font-size: 0.7rem;
+        color: $txt-color;
+    }
+    
+    textarea {
+        // min-height: 250px;
+        min-height: 150px;
+    }
+    
+    button {
+        background: $btn-hover-color;
+        border: none;
+        color: $txt-color;
+        border-radius: 15px;
+        cursor: pointer;
+        margin-top: 15px;
+        margin-bottom: 40px;
+        // padding: 10px;
+        padding: 7px;
+        width: 100%;
+    }
+        
+    input:focus:-webkit-autofill {
+        -webkit-text-fill-color: $txt-color;
+        box-shadow: 0 0 0px 1000px $bg-color inset;
+        -webkit-box-shadow: 0 0 0px 1000px $bg-color inset;
+    }
+    input:focus:-moz-autofill {
+        -moz-text-fill-color: $txt-color;
+        box-shadow: 0 0 0px 1000px $bg-color inset;
+        -moz-box-shadow: 0 0 0px 1000px $bg-color inset;
+    }
+    input:focus:-o-autofill {
+        -o-text-fill-color: $txt-color;
+        box-shadow: 0 0 0px 1000px $bg-color inset;
+        -o-box-shadow: 0 0 0px 1000px $bg-color inset;
+    }
+    input:focus:-khtml-autofill {
+        -khtml-text-fill-color: $txt-color;
+        box-shadow: 0 0 0px 1000px $bg-color inset;
+        -khtml-box-shadow: 0 0 0px 1000px $bg-color inset;
+    }
+    input:-webkit-autofill-selected {
+        color: white !important;
+    }
+    input:-webkit-autofill-previewed {
+        color: white !important;
+    }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+        -khtml-text-fill-color: $txt-color;
+        -webkit-text-fill-color: $txt-color;
+        box-shadow: 0 0 0px 1000px transparent inset;
+        -khtml-box-shadow: 0 0 0px 1000px $bg-color inset;
+        transition: background-color 5000s ease-in-out 0s;
     }
 }
 
-input:focus ~ .form-label,
-textarea:focus ~ .form-label {
-    position: absolute;
-    font-size: 0.7rem;
-    top: -2px;
-    // color: $mars-color;
-}
-
-.form-label {
-    position: absolute;
-    top: -2px;
-    display: block;
-    transition: 0.2s;
-    font-size: 0.7rem;
-    color: $txt-color;
-}
-
-textarea {
-    min-height: 250px;
-}
-
-button {
-    background: $btn-hover-color;
-    border: none;
-    color: $txt-color;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-top: 15px;
-    padding: 10px;
-    width: 100%;
-}
-
-input:-webkit-autofill {
-    -webkit-text-fill-color: $txt-color;
-    box-shadow: 0 0 0px 1000px $bg-color inset;
-    -webkit-box-shadow: 0 0 0px 1000px $bg-color inset;
-}
-input:-moz-autofill {
-    -moz-text-fill-color: $txt-color;
-    box-shadow: 0 0 0px 1000px $bg-color inset;
-    -moz-box-shadow: 0 0 0px 1000px $bg-color inset;
-}
-input:-o-autofill {
-    -o-text-fill-color: $txt-color;
-    box-shadow: 0 0 0px 1000px $bg-color inset;
-    -o-box-shadow: 0 0 0px 1000px $bg-color inset;
-}
-input:-khtml-autofill {
-    -khtml-text-fill-color: $txt-color;
-    box-shadow: 0 0 0px 1000px $bg-color inset;
-    -khtml-box-shadow: 0 0 0px 1000px $bg-color inset;
-}
-
-input:focus:-webkit-autofill {
-    -webkit-text-fill-color: $txt-color;
-    box-shadow: 0 0 0px 1000px $bg-color inset;
-    -webkit-box-shadow: 0 0 0px 1000px $bg-color inset;
-}
-input:focus:-moz-autofill {
-    -moz-text-fill-color: $txt-color;
-    box-shadow: 0 0 0px 1000px $bg-color inset;
-    -moz-box-shadow: 0 0 0px 1000px $bg-color inset;
-}
-input:focus:-o-autofill {
-    -o-text-fill-color: $txt-color;
-    box-shadow: 0 0 0px 1000px $bg-color inset;
-    -o-box-shadow: 0 0 0px 1000px $bg-color inset;
-}
-input:focus:-khtml-autofill {
-    -khtml-text-fill-color: $txt-color;
-    box-shadow: 0 0 0px 1000px $bg-color inset;
-    -khtml-box-shadow: 0 0 0px 1000px $bg-color inset;
+@media screen and (min-width: 760px) {
+    .privacy-policy--wrapper {
+        font-size: 0.9rem;
+    }
+    textarea {
+        min-height: 200px;
+    }
+    button {
+        padding: 10px;
+        margin-top: 20px;
+    }
 }
