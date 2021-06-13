@@ -90,10 +90,16 @@ const MobileView = () => {
                 }
             </div>
             <div className="projects-nav">
-                <span className="nav-ico left-arrow" onClick={prevPage}></span>
-                <span className="nav-ico web" id="web" onClick={changeType}></span>
-                <span className="nav-ico art" id="art" onClick={changeType}></span>
-                <span className="nav-ico right-arrow" onClick={nextPage}></span>
+                <span className="nav-arrow left-arrow" onClick={prevPage}></span>
+                <li className="nav-item" id="web" onClick={changeType}>
+                    <i className="web-ico"></i>
+                    <span>WEB</span>
+                </li>
+                <li className="nav-item" id="art" onClick={changeType}>
+                    <i className="art-ico"></i>
+                    <span>ART</span>
+                </li>
+                <span className="nav-arrow right-arrow" onClick={nextPage}></span>
             </div>
         </>
     )
@@ -136,10 +142,18 @@ const TabletView = () => {
                     </>
                 }
             </div>
-            <div className="projects-nav">
-                <span className="nav-ico web" id="web" onClick={changeType}></span>
-                <span className="nav-ico art" id="art" onClick={changeType}></span>
-            </div>
+            <ul className="projects-nav">
+                <li className="nav-item" id="web" onClick={changeType}>
+                    <i className="web-ico"></i>
+                    <span>WEB DEV</span>
+                </li>
+                <li className="nav-item" id="art" onClick={changeType}>
+                    <i className="art-ico"></i>
+                    <span>ART</span>
+                </li>
+                {/* <span className="nav-ico web" id="web" onClick={changeType}></span>
+                <span className="nav-ico art" id="art" onClick={changeType}></span> */}
+            </ul>
         </>
     )
 }

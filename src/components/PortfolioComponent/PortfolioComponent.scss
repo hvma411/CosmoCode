@@ -2,6 +2,7 @@
     .portfolio-component {
         width: 100%;
         height: 100%;
+        min-height: 100vh;
         padding: 60px 20px 60px 20px;
         display: flex;
         flex-direction: column;
@@ -31,31 +32,89 @@
         bottom: 10px;
 
 
-        .web {
-            background: url(/src/utils/assets/icons/icons8-browser-windows-64.png);
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            width: 50px;
+            height: 50px;
+            font-size: 0.6rem;
+            color: $txt-color;
+            cursor: pointer;
+            margin-top: 5px;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: background .2s linear;
+
+            i {
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-bottom: 7px;
+                transition: transform .2s linear;
+            }
+            span {
+                font-size: 0.60rem;
+                font-weight: 400;
+                text-decoration: none;
+            }
+
+            .web-ico {
+                background-image: url(/src/utils/assets/icons/HomeIconSVG.svg);
+                transform: scale(1.1);
+            }
+            .art-ico {
+                background-image: url(/src/utils/assets/icons/ProjectsIconSVG2.svg);
+            }
         }
-        .art {
-            background: url(/src/utils/assets/icons/icons8-fill-color-50.png);
+        .nav-item:hover {
+            transition: background .2s linear;
+            background: $btn-hover-color;
+        }
+        .nav-item:hover i {
+            transition: transform .2s linear;
+            transform: scale(1.2);
+        }
+        .nav-item:hover .web-ico {
+            transform: scale(1.3);
+        }
+        .nav-item--active .nav-item {
+            background: $btn-hover-color;
+            
+            i {
+                transform: scale(1.2);
+            }
         }
 
-        .nav-ico {
-            width: 25px;
-            height: 25px;
-            background-size: cover;
-            background-repeat: no-repeat;
+        .nav-arrow {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            width: 50px;
+            height: 50px;
             margin: 10px;
-            cursor: pointer;
         }
 
         .left-arrow {
             background: url(/src/utils/assets/icons/chevron-left-solid.svg);
             background-repeat: no-repeat;
             cursor: pointer;
+            background-position: center right;
+            background-size: 30%;
         }
         .right-arrow {
             background: url(/src/utils/assets/icons/chevron-right-solid.svg);
             background-repeat: no-repeat;
             cursor: pointer;
+            background-position: center left;
+            background-size: 30%;
         }
     }
     
@@ -89,6 +148,7 @@
 @media screen and (min-width: 768px) {
     .portfolio-component {
         padding: 60px 80px;
+        height: 100vh;
     }
 
     .projects-wrapper {
@@ -115,8 +175,70 @@
 
     .projects-nav {
         width: auto;
-        height: auto;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 15px 15px 15px 10px;
+        position: fixed;
         bottom: 0px;
+        right: 0;
+        top: 0;
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99;
+            width: 60px;
+            height: 60px;
+            font-size: 0.7rem;
+            color: $txt-color;
+            cursor: pointer;
+            margin-top: 5px;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: background .2s linear;
+
+            i {
+                display: block;
+                width: 28px;
+                height: 28px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                margin-bottom: 7px;
+                transition: transform .2s linear;
+            }
+            span {
+                font-size: 0.60rem;
+                font-weight: 400;
+                text-decoration: none;
+            }
+
+            .web-ico {
+                background-image: url(/src/utils/assets/icons/HomeIconSVG.svg);
+            }
+            .art-ico {
+                background-image: url(/src/utils/assets/icons/ProjectsIconSVG2.svg);
+            }
+        }
+        .nav-item:hover {
+            transition: background .2s linear;
+            background: $btn-hover-color;
+        }
+        .nav-item:hover i {
+            transition: transform .2s linear;
+            transform: scale(1.2);
+        }
+        .nav-item--active .nav-item {
+            background: $btn-hover-color;
+            
+            i {
+                transform: scale(1.2);
+            }
+        }
+
     }
 
 }
