@@ -22,7 +22,7 @@ const App = () => {
     useEffect(() => {
         window.addEventListener('resize', appHeight);
         appHeight()
-        screen.orientation.lock();
+        // screen.orientation.lock();
     }, [])
 
     return (

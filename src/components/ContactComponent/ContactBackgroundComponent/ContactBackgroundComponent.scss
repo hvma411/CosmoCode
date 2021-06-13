@@ -2,9 +2,11 @@
     .solar-system {
         width: 100%;
         height: 100%;
-        position: absolute;
-        top: 30px;
+        position: fixed;
+        top: 0px;
         left: 0;
+        right: 0;
+
     
         display: flex;
         justify-content: center;
@@ -163,5 +165,11 @@
         left: 0;
     
         transform: scale(0.65);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .solar-system {
+        top: 0;
     }
 }
