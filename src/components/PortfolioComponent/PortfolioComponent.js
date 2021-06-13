@@ -15,9 +15,6 @@ const PortfolioComponent = () => {
         return () => window.removeEventListener("resize", updateDimensions);
     }, []);
 
-
-
-
     return (
         <div className="portfolio-component router-transition">
             { width < 768 ? <MobileView /> : null}

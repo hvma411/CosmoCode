@@ -2,10 +2,10 @@
     .about-component {
         width: 100%;
         height: 100%;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        // padding: 0 60px;
+        justify-content: flex-start;
         padding-top: 30px;
         align-items: center;
     }
@@ -14,7 +14,16 @@
     .list-content-wrapper,
     .photo-wrapper {
         width: 100%;
-        height: 100%;
+        // height: 100%;
+    }
+    .list-wrapper {
+        height: auto;
+    }
+    .list-content-wrapper {
+        height: 30%;
+    }
+    .photo-wrapper {
+        height: 60%;
     }
     
     .photo {
@@ -22,7 +31,7 @@
         height: 100%;
         background-image: url(/src/utils/assets/photo.jpg);
         background-size: cover;
-        background-position: top;
+        background-position: 0 -30px;
         background-repeat: no-repeat;
     }
     .photo-separator {
@@ -33,24 +42,33 @@
     .list-wrapper {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        padding: 20px 0 5px 0;
+        height: auto;
     }
     
     .about-list {
         width: 100%;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
+        padding: 0 20px;
+        z-index: 99;
     
         &--element {
-            margin-top: 15px;
+            margin-top: 0;
             border-radius: 15px;
-            width: 320px;
-            padding: 20px;
+            width: auto;
+            padding: 8px;
             color: $txt-color;
             cursor: pointer;
             transition: background .2s linear;
+
+            h3 {
+                display: none;
+            }
         }
     
         &--element:hover {
@@ -67,40 +85,47 @@
     h2 {
         letter-spacing: 4px;
         font-weight: 200;
-        margin-bottom: 5px;
         color: $txt-color;
+        font-size: 0.65rem;
     }
     
     h3 {
         font-weight: 500;
-        font-size: 0.9rem;
+        // font-size: 0.9rem;
+        font-size: 0.7rem;
+        // display: none; // tego nie ma w oryginale 
     }
     
     .list-content-wrapper {
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
+        // height: auto; // tego tu nie ma
     
         .content-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: auto;
-            min-height: 400px;
+            height: 100%;
+            // min-height: 400px;
             color: $txt-color;
             position: relative;
         }
     
         .content {
             max-width: 420px;
+            height: 150px;
+            overflow: -moz-scrollbars-vertical; 
+            overflow-y: auto;
             position: absolute;
-            padding-left: 20px;
+            padding: 0 20px;
         }
     
         .content--active {
             opacity: 1;
             transition: opacity .3s .2s linear; 
+            z-index: 1;
         }
     
         .content--inActive {
@@ -118,4 +143,57 @@
         }
     }
     
+}
+
+@media screen and (min-width: 1024px) {
+    .about-component {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 60px;
+    }
+
+    .list-wrapper,
+    .list-content-wrapper,
+    .photo-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .list-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .about-list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+
+        &--element {
+            margin-top: 15px;
+            border-radius: 15px;
+            width: 320px;
+            padding: 20px;
+            color: $txt-color;
+            cursor: pointer;
+            transition: background .2s linear;
+
+            h3 {
+                display: block;
+            }
+        }
+    }
+
+    h2 {
+        margin-bottom: 5px;
+        font-size: 1rem
+    }
+    
+    h3 {
+        font-size: 0.9rem;
+    }
+
 }
