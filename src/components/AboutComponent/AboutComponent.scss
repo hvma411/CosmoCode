@@ -100,6 +100,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 0 10px;
+        padding-top: 0;
         // height: auto; // tego tu nie ma
     
         .content-wrapper {
@@ -116,10 +118,33 @@
         .content {
             max-width: 420px;
             height: 150px;
-            overflow: -moz-scrollbars-vertical; 
+            // overflow: -moz-scrollbars-vertical; 
             overflow-y: auto;
             position: absolute;
-            padding: 0 20px;
+            padding: 10px 15px;
+
+            border: 2px solid $btn-hover-color;
+            border-radius: 15px;
+
+            ::-webkit-scrollbar {
+                -webkit-appearance: none;
+                -webkit-overflow-scrolling: auto
+            }
+            ::-webkit-scrollbar:vertical {
+                width: 10px;
+            }
+            ::-webkit-scrollbar:horizontal {
+                height: 10px;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: $btn-hover-color;
+                border-radius: 15px;
+                border: 2px solid $btn-hover-color;
+            }
+            ::-webkit-scrollbar-track {
+                border-radius: 10px;
+                background-color: $btn-hover-color;
+            }
         }
     
         .content--active {
@@ -134,7 +159,7 @@
         }
     
         h2 {
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
     
         h3 {

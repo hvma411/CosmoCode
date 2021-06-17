@@ -1,26 +1,61 @@
-.home-content {
-    width: auto;
-    height: 400px;
+@media screen and (min-width: 260px) {
+    .home-content {
+        width: auto;
+        height: 400px;
+        
+        color: $txt-color;
+        // padding: 20px;
+        margin-bottom: 120px;
+        padding: 60px;
+        padding-top: 0;
+        text-align: center;
+        
     
-    color: $txt-color;
-    padding: 20px;
-    margin-bottom: 60px;
-    padding-left: 160px;
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        h1::after {
+            content: 'Mars';
+            color: $mars-color;
+        }
+    
+        h2 {
+            font-size: 1rem;
+            font-weight: 400;
+            padding-left: 3px;
+        }
+    }
+}
 
-    h1 {
-        font-size: 4.5rem;
-        font-weight: 600;
-        margin-bottom: 20px;
+@media screen and (min-width: 768px) {
+    .home-content {
+        width: auto;
+        height: 400px;
+        
+        color: $txt-color;
+        padding: 20px;
+        margin-bottom: 60px;
+        padding-left: 160px;
+    
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        h1::after {
+            content: 'Mars';
+            color: $mars-color;
+        }
+    
+        h2 {
+            font-size: 2rem;
+            font-weight: 400;
+            padding-left: 3px;
+        }
     }
     
-    h1::after {
-        content: 'Mars';
-        color: $mars-color;
-    }
-
-    h2 {
-        font-size: 2rem;
-        font-weight: 400;
-        padding-left: 3px;
-    }
 }
