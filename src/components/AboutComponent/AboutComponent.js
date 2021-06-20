@@ -111,7 +111,7 @@ const AboutComponent = () => {
                     </li>
                 </ul>
             </div>
-            { width < 760 ? null : <Photo />}
+            { width < 1024 ? null : <Photo />}
             <div className="list-content-wrapper">
                 <div className="content-wrapper">
                     <AboutContent contentTab="history" animation={aboutTab.history.animation} />
@@ -119,7 +119,7 @@ const AboutComponent = () => {
                     <AboutContent contentTab="experience" animation={aboutTab.experience.animation} />
                 </div>
             </div>
-            { width < 760 ? <Photo /> : null}
+            { width < 1024 ? <Photo /> : null}
         </div>
     )
 }

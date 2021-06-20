@@ -161,7 +161,7 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        top: 100px;
+        top: 0;
         left: 0;
     
         transform: scale(0.65);
@@ -171,5 +171,11 @@
 @media screen and (min-width: 1024px) {
     .solar-system {
         top: 0;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .solar-system {
+        transform: scale(0.85);
     }
 }
