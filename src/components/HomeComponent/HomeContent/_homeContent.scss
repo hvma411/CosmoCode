@@ -1,14 +1,12 @@
 @media screen and (min-width: 260px) {
     .home-content {
-        width: auto;
-        height: 400px;
-        
+        width: 100%;
+        height: auto;
         color: $txt-color;
-        // padding: 20px;
-        margin-bottom: 120px;
         padding: 60px;
-        padding-top: 0;
         text-align: center;
+        top: 60px;
+        z-index: 100;
         
     
         h1 {
@@ -32,30 +30,34 @@
 
 @media screen and (min-width: 768px) {
     .home-content {
-        width: auto;
-        height: 400px;
-        
-        color: $txt-color;
-        padding: 20px;
-        margin-bottom: 60px;
-        padding-left: 160px;
+        top: 120px;
     
         h1 {
-            font-size: 4.5rem;
-            font-weight: 600;
+            font-size: 5rem;
             margin-bottom: 20px;
         }
-        
-        h1::after {
-            content: 'Mars';
-            color: $mars-color;
-        }
-    
+
         h2 {
-            font-size: 2rem;
-            font-weight: 400;
-            padding-left: 3px;
+            font-size: 2.2rem;
         }
     }
     
+}
+
+@media screen and (min-width: 1280px) {
+    .home-content {
+        top: auto;
+        bottom: 260px;
+        text-align: left;
+        padding-left: 180px;
+    
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+        }
+    }
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Projects } from "./Projects";
 
 const PortfolioComponent = () => {
 
@@ -25,27 +26,67 @@ const PortfolioComponent = () => {
 }
 
 const MobileView = () => {
-    const [projectsPage, setProjectsPage] = useState(1);
     const [projectsType, setProjectsType] = useState("web");
+    const [projectsPerPage, setProjectsPerPage] = useState(2);
+    const [currentPage, setCurrentPage] = useState(1);
+
+    const projects = {
+        web: [
+            {
+                id: 1,
+                title: "web1"
+            },
+            {
+                id: 2,
+                title: "web2"
+            },
+            {
+                id: 3,
+                title: "web3"
+            },
+            {
+                id: 4,
+                title: "web4"
+            }
+        ],
+        art: [
+            {
+                id: 1,
+                title: "art1"
+            },
+            {
+                id: 2,
+                title: "art2"
+            },
+            {
+                id: 3,
+                title: "art3"
+            },
+            {
+                id: 4,
+                title: "art4"
+            }
+        ]
+    }
 
     const nextPage = () => {
-        if (projectsPage === 2) {
-            setProjectsPage(1)
+        if (currentPage === projects[projectsType].length / projectsPerPage) {
+            setCurrentPage(1)
         } else {
-            setProjectsPage(projectsPage + 1)
+            setCurrentPage(prevPage => prevPage + 1)
         }
     }
 
     const prevPage = () => {
-        if (projectsPage === 1) {
-            setProjectsPage(2)
+        if (currentPage === 1) {
+            setCurrentPage(projects[projectsType].length / projectsPerPage)
         } else {
-            setProjectsPage(projectsPage - 1)
+            setCurrentPage(prevPage => prevPage - 1)
         }
     }
 
     const changeType = (e) => {
-        setProjectsPage(1);
+        setCurrentPage(1);
 
         if (e.currentTarget.id === "web") {
             setProjectsType("web");
@@ -53,38 +94,22 @@ const MobileView = () => {
             setProjectsType("art")
         }
     }
+
+    const lastProjectIndex = currentPage * projectsPerPage;
+    const firstProjectIndex = lastProjectIndex - projectsPerPage;
+    const currentWebProjects = projects.web.slice(firstProjectIndex, lastProjectIndex);
+    const currentArtProjects = projects.art.slice(firstProjectIndex, lastProjectIndex);
+
     return (
         <>
             <div className="projects-wrapper">
-                {projectsPage === 1 ?
-                    <div className="projects-column">
-                        {projectsType === "web" ?
-                            <>
-                                <div className="project-box">web1</div>
-                                <div className="project-box">web1</div>
-                            </>
-                            :
-                            <>
-                                <div className="project-box">art1</div>
-                                <div className="project-box">art1</div>
-                            </>
-                        }
-                    </div>
-                    :
-                    <div className="projects-column">
-                        {projectsType === "web" ?
-                            <>
-                                <div className="project-box">web2</div>
-                                <div className="project-box">web2</div>
-                            </>
-                            :
-                            <>
-                                <div className="project-box">art2</div>
-                                <div className="project-box">art2</div>
-                            </>
-                        }
-                    </div>
-                }
+                <ul className="projects-column">
+                    {projectsType === "web" ?
+                        <Projects projects={currentWebProjects} />
+                        :
+                        <Projects projects={currentArtProjects} />
+                    }
+                </ul>
             </div>
             <div className="projects-nav">
                 <span className="nav-arrow left-arrow" onClick={prevPage}></span>
@@ -148,8 +173,6 @@ const TabletView = () => {
                     <i className="art-ico"></i>
                     <span>ART</span>
                 </li>
-                {/* <span className="nav-ico web" id="web" onClick={changeType}></span>
-                <span className="nav-ico art" id="art" onClick={changeType}></span> */}
             </ul>
         </>
     )

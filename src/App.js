@@ -5,12 +5,11 @@ import "./main.scss"
 import HomeComponent from "./components/HomeComponent/HomeComponent";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import MenuComponent from "./components/MenuComponent/MenuComponent";
-import BackgroundComponent from "./components/BackgroundComponent/BackgroundComponent";
-import FooterButHeaderComponent from "./components/FooterButHeaderComponent/FooterButHeaderComponent";
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import AboutComponent from "./components/AboutComponent/AboutComponent.js";
 import PortfolioComponent from "./components/PortfolioComponent/PortfolioComponent";
 import ContactComponent from "./components/ContactComponent/ContactComponent";
+import SocialMediaBar from "./components/SocialMediaBar/SocialMediaBar";
 const App = () => {
 
     const appHeight = () => {
@@ -18,11 +17,9 @@ const App = () => {
         doc.style.setProperty('--vh', (window.innerHeight * .01) + 'px');
     }
 
-
     useEffect(() => {
         window.addEventListener('resize', appHeight);
         appHeight()
-        // screen.orientation.lock();
     }, [])
 
     return (
@@ -48,7 +45,7 @@ const App = () => {
                     )} />
                 </div>
             </BrowserRouter>
-            <FooterButHeaderComponent />
+            <SocialMediaBar />
         </main>
     )
 }
