@@ -21,10 +21,7 @@ const BackgroundComponent = () => {
 
 const Planet = ({ planet }) => {
     return (
-        <div className={ planet }>
-            <div className="circle border"></div>
-            <div className="circle border"></div>
-            <div className="circle border"></div>
+        <div className={planet}>
             <div className="circle border"></div>
             <div className="circle border"></div>
             <div className="circle border"></div>

@@ -7,11 +7,12 @@ const MenuComponent = () => {
 
     return (
         <nav className="nav-sidebar hamburger-menu">
-            <HamburgerMenuBtn 
-                isMenuVisible={ isMenuVisible } 
-                setIsMenuVisible={ setIsMenuVisible }
+            <div className={`menu-background ${isMenuVisible ? "menu-background--active" : "menu-background--inActive"}`} />
+            <HamburgerMenuBtn
+                isMenuVisible={isMenuVisible}
+                setIsMenuVisible={setIsMenuVisible}
             />
-            <ul className={`nav-wrapper ${ isMenuVisible ? "hamburger-menu--active" : "hamburger-menu--inActive"}`}>
+            <ul className={`nav-wrapper ${isMenuVisible ? "hamburger-menu--active" : "hamburger-menu--inActive"}`}>
                 <NavLink activeClassName="nav-item--active" exact to="/">
                     <li className="nav-item">
                         <i className="home-ico"></i>
@@ -37,15 +38,13 @@ const MenuComponent = () => {
                     </li>
                 </NavLink>
             </ul>
-            {/* <div className="nav-sidebar--line"></div> */}
         </nav>
     )
 }
 
 const HamburgerMenuBtn = ({ isMenuVisible, setIsMenuVisible }) => {
-
     return (
-        <div className={`hamburger-menu--btn ${ isMenuVisible ? "menu--active" : "menu--inActive"}`}
+        <div className={`hamburger-menu--btn ${isMenuVisible ? "menu--active" : "menu--inActive"}`}
             onClick={() => setIsMenuVisible(!isMenuVisible)}>
             <div className={`hamburger__inner`}></div>
         </div>
