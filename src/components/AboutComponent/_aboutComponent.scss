@@ -281,8 +281,26 @@
         .content {
             max-width: 350px;
             height: 100%;
-            padding: 20px
+            padding: 20px;
         }
+
+        ::-webkit-scrollbar {
+            width: 35px;
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+            width: 20px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: $btn-hover-color;
+            border-radius: 14px;
+            border: 6px solid $bg-color;
+            border-left: 25px solid $bg-color;
+        }
+
     
         h2 {
             margin-bottom: 5px;
