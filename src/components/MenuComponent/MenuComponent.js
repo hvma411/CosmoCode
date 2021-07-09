@@ -1,9 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const MenuComponent = () => {
 
     const [isMenuVisible, setIsMenuVisible] = useState(true);
+
+    const menuVisiblity = () => {
+        if (window.innerWidth < 1024) {
+            setIsMenuVisible(false);
+        } else {
+            setIsMenuVisible(true);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('resize', menuVisiblity)
+        menuVisiblity()
+    }, [])
 
     return (
         <nav className="nav-sidebar hamburger-menu">
