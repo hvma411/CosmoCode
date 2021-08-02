@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ProjectHoverComponent } from "./ProjectHoverComponent";
 import { Projects } from "./Projects";
 
 const PortfolioComponent = () => {
@@ -34,37 +35,45 @@ const MobileView = () => {
         web: [
             {
                 id: 1,
-                title: "web1"
+                className: "web1",
+                type: "web"
             },
             {
                 id: 2,
-                title: "web2"
+                className: "web2",
+                type: "web"
             },
             {
                 id: 3,
-                title: "web3"
+                className: "web3",
+                type: "web"
             },
             {
                 id: 4,
-                title: "web4"
+                className: "web4",
+                type: "web"
             }
         ],
         art: [
             {
                 id: 1,
-                title: "art1"
+                className: "art1",
+                type: "art"
             },
             {
                 id: 2,
-                title: "art2"
+                className: "art2",
+                type: "art"
             },
             {
                 id: 3,
-                title: "art3"
+                className: "art3",
+                type: "art",
             },
             {
                 id: 4,
-                title: "art4"
+                className: "art4",
+                type: "art"
             }
         ]
     }
@@ -143,23 +152,58 @@ const TabletView = () => {
                 {projectsType === "web" ?
                     <>
                         <div className="projects-column">
-                            <div className="project-box">dc</div>
-                            <div className="project-box">dc</div>
+                            <div className="project-box web-box">
+                                <div className="desktop-mockup web1"></div>
+                                <div className="mobile-mockup web1-mobile"></div>
+                                <ProjectHoverComponent className="web1" />
+
+                            </div>
+                            <div className="project-box web-box">
+                                <div className="desktop-mockup web2"></div>
+                                <ProjectHoverComponent className="web2" />
+
+                            </div>
                         </div>
                         <div className="projects-column reverse-column">
-                            <div className="project-box">dc</div>
-                            <div className="project-box">dc</div>
+                            <div className="project-box web-box">
+                                <div className="desktop-mockup web3"></div>
+                                <div className="mobile-mockup web3-mobile"></div>
+                                <ProjectHoverComponent className="web3" />
+
+                            </div>
+                            <div className="project-box web-box">
+                                <div className="desktop-mockup web4"></div>
+                                <div className="mobile-mockup web4-mobile"></div>
+                                <ProjectHoverComponent className="web4" />
+
+                            </div>
                         </div>
                     </>
                     :
                     <>
                         <div className="projects-column">
-                            <div className="project-box">ac</div>
-                            <div className="project-box">ac</div>
+                            <div className="project-box">
+                                <div className="art art1"></div>
+                                <ProjectHoverComponent className="art1" />
+
+                            </div>
+                            <div className="project-box">
+                                <div className="art art2"></div>
+                                <ProjectHoverComponent className="art2" />
+
+                            </div>
                         </div>
                         <div className="projects-column reverse-column">
-                            <div className="project-box">ac</div>
-                            <div className="project-box">ac</div>
+                            <div className="project-box">
+                                <div className="art art3"></div>
+                                <ProjectHoverComponent className="art3" />
+
+                            </div>
+                            <div className="project-box">
+                                <div className="art art4"></div>
+                                <ProjectHoverComponent className="art4" />
+
+                            </div>
                         </div>
                     </>
                 }
@@ -182,20 +226,54 @@ const DesktopView = () => {
     return (
         <div className="projects-wrapper">
             <div className="projects-column">
-                <div className="project-box"></div>
-                <div className="project-box"></div>
+                <div className="project-box web-box">
+                    <div className="desktop-mockup web1"></div>
+                    <div className="mobile-mockup web1-mobile"></div>
+                    <ProjectHoverComponent className="web1" />
+                </div>
+                <div className="project-box">
+                    <div className="art art1"></div>
+                    <ProjectHoverComponent className="art1" />
+
+                </div>
             </div>
             <div className="projects-column reverse-column">
-                <div className="project-box"></div>
-                <div className="project-box"></div>
+                <div className="project-box">
+                    <div className="art art2"></div>
+                    <ProjectHoverComponent className="web2" />
+
+                </div>
+                <div className="project-box web-box">
+                    <div className="desktop-mockup web2"></div>
+                    <ProjectHoverComponent className="art2" />
+
+                </div>
             </div>
             <div className="projects-column">
-                <div className="project-box"></div>
-                <div className="project-box"></div>
+                <div className="project-box web-box">
+                    <div className="desktop-mockup web3"></div>
+                    <div className="mobile-mockup web3-mobile"></div>
+                    <ProjectHoverComponent className="web3" />
+
+                </div>
+                <div className="project-box">
+                    <div className="art art3"></div>
+                    <ProjectHoverComponent className="art3" />
+
+                </div>
             </div>
             <div className="projects-column reverse-column">
-                <div className="project-box"></div>
-                <div className="project-box"></div>
+                <div className="project-box">
+                    <div className="art art4"></div>
+                    <ProjectHoverComponent className="art4" />
+
+                </div>
+                <div className="project-box web-box">
+                    <div className="desktop-mockup web4"></div>
+                    <div className="mobile-mockup web4-mobile"></div>
+                    <ProjectHoverComponent className="web4" />
+
+                </div>
             </div>
         </div>
     )
