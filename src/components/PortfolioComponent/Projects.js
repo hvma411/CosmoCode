@@ -1,7 +1,7 @@
 import React from 'react'
 import { ProjectHoverComponent } from './ProjectHoverComponent'
 
-export const Projects = ({ projects }) => {
+export const Projects = ({ projects, projectName }) => {
     return (
         <>
             { projects.map(project => (
@@ -14,7 +14,7 @@ export const Projects = ({ projects }) => {
                         :
                         <div className={`art ${project.className}`}></div>
                     }
-                    <ProjectHoverComponent />
+                    <ProjectHoverComponent projectName={project.projectName} />
                 </li>
             ))}
         </>

@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { ProjectHoverComponent } from "./ProjectHoverComponent";
 import { Projects } from "./Projects";
+import { ProjectViewComponent } from "./ProjectViewComponent";
+import { ProjectName } from './ProjectsData.js';
 
 const PortfolioComponent = () => {
 
     const [width, setWidth] = useState(window.innerWidth);
     const [height, setHeight] = useState(window.innerHeight);
+
+    const isProjectViewVisible = useSelector((state) => state.reducer.isProjectViewVisible)
 
     const updateDimensions = () => {
         setWidth(window.innerWidth);
@@ -22,6 +27,7 @@ const PortfolioComponent = () => {
             { width < 768 ? <MobileView /> : null}
             { width >= 768 && width < 1280 ? <TabletView /> : null}
             { width >= 1280 ? <DesktopView /> : null}
+            { isProjectViewVisible ? <ProjectViewComponent /> : null}
         </div>
     )
 }
@@ -36,44 +42,52 @@ const MobileView = () => {
             {
                 id: 1,
                 className: "web1",
-                type: "web"
+                type: "web",
+                projectName: ProjectName.ZIELONOJEMY
             },
             {
                 id: 2,
                 className: "web2",
-                type: "web"
+                type: "web",
+                projectName: ProjectName.CMS
             },
             {
                 id: 3,
                 className: "web3",
-                type: "web"
+                type: "web",
+                projectName: ProjectName.BEST_SHOP
             },
             {
                 id: 4,
                 className: "web4",
-                type: "web"
+                type: "web",
+                projectName: ProjectName.COSMO_CODE
             }
         ],
         art: [
             {
                 id: 1,
                 className: "art1",
-                type: "art"
+                type: "art",
+                projectName: ProjectName.PYRAMIDS
             },
             {
                 id: 2,
                 className: "art2",
-                type: "art"
+                type: "art",
+                projectName: ProjectName.SAND_DUNES
             },
             {
                 id: 3,
                 className: "art3",
                 type: "art",
+                projectName: ProjectName.ECLIPSE
             },
             {
                 id: 4,
                 className: "art4",
-                type: "art"
+                type: "art",
+                projectName: ProjectName.MOUNTAINS
             }
         ]
     }
@@ -155,12 +169,12 @@ const TabletView = () => {
                             <div className="project-box web-box">
                                 <div className="desktop-mockup web1"></div>
                                 <div className="mobile-mockup web1-mobile"></div>
-                                <ProjectHoverComponent className="web1" />
+                                <ProjectHoverComponent projectName={ProjectName.ZIELONOJEMY} />
 
                             </div>
                             <div className="project-box web-box">
                                 <div className="desktop-mockup web2"></div>
-                                <ProjectHoverComponent className="web2" />
+                                <ProjectHoverComponent projectName={ProjectName.CMS} />
 
                             </div>
                         </div>
@@ -229,7 +243,7 @@ const DesktopView = () => {
                 <div className="project-box web-box">
                     <div className="desktop-mockup web1"></div>
                     <div className="mobile-mockup web1-mobile"></div>
-                    <ProjectHoverComponent className="web1" />
+                    <ProjectHoverComponent projectName={ProjectName.ZIELONOJEMY} />
                 </div>
                 <div className="project-box">
                     <div className="art art1"></div>
@@ -245,7 +259,7 @@ const DesktopView = () => {
                 </div>
                 <div className="project-box web-box">
                     <div className="desktop-mockup web2"></div>
-                    <ProjectHoverComponent className="art2" />
+                    <ProjectHoverComponent projectName={ProjectName.CMS} />
 
                 </div>
             </div>
