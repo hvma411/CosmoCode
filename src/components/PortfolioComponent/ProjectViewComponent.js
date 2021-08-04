@@ -4,6 +4,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import allActions from '../../redux/actions.js';
 import { ProjectType } from './ProjectsData.js';
+import zielonojemyDesktop from '../../utils/assets/CMSLandingPhoto.jpg'
 
 export const ProjectViewComponent = () => {
 
@@ -40,18 +41,17 @@ const WebProject = ({ projectData }) => {
                         <li key={idx}>{el}</li>
                     ))}
                 </ul>
-                {projectData.projectUrl ? <a href={projectData.projectUrl}>Click here to visit website</a> : ""}
+                {projectData.projectUrl ? <a href={projectData.projectUrl} target="_blank">Click here to visit website</a> : ""}
             </div>
-            <div className="desktop-project-wrapper ">
-                <div className={`web-image desktop-${projectData.className}`}></div>
+            <div className="project-wrapper ">
+                <img src={projectData.desktopImage} className="project-image" />
             </div>
             {projectData.RWD ?
-                <div className="mobile-project-wrapper">
-                    <div className={`web-image mobile-${projectData.className}`}></div>
+                <div className="project-wrapper">
+                    <img src={projectData.mobileImage} className="project-image" />
                 </div>
                 : ""
             }
-
         </>
     )
 }
@@ -62,10 +62,9 @@ const ArtProject = ({ projectData }) => {
             <div className="project-info-wrapper">
                 <h2 className="project-title">{projectData.projectTitle}</h2>
                 <p className="project-description">{projectData.projectDescription}</p>
-
             </div>
             <div className="art-wrapper">
-                <div className="art1 art"></div>
+                <img src={projectData.desktopImage} className="project-image" />
             </div>
         </>
     )

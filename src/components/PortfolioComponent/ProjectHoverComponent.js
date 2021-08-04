@@ -12,7 +12,6 @@ export const ProjectHoverComponent = ({ projectName }) => {
     const onClick = () => {
         dispatch(allActions.switchProjectViewVisibility())
         dispatch(allActions.setVisibleProject(projectData[projectName]))
-        console.log(projectData[projectName])
     }
 
     return (

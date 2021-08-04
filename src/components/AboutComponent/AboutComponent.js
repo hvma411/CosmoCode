@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { ScrollMeComponent } from "./ScrollMeComponent";
 
 const AboutComponent = () => {
 
@@ -100,14 +101,14 @@ const AboutComponent = () => {
                         data-content="hobbies"
                     >
                         <h2>HOBBIES & DREAMS</h2>
-                        <h3>What I like? What I want to do in the future?</h3>
+                        <h3>What I like? My dream future?</h3>
                     </li>
                     <li className={`about-list--element ${aboutTab.experience.visible ? "element--active" : ""}`}
                         onClick={changeContent}
                         data-content="experience"
                     >
                         <h2>TECH STACK & EXPERIENCE</h2>
-                        <h3>What is my experience? </h3>
+                        <h3>What is my experience and tech-stack? </h3>
                     </li>
                 </ul>
             </div>
@@ -117,6 +118,7 @@ const AboutComponent = () => {
                     <AboutContent contentTab="history" animation={aboutTab.history.animation} />
                     <AboutContent contentTab="hobbies" animation={aboutTab.hobbies.animation} />
                     <AboutContent contentTab="experience" animation={aboutTab.experience.animation} />
+                    <ScrollMeComponent />
                 </div>
             </div>
             { width < 1024 ? <Photo /> : null}

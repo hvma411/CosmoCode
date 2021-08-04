@@ -16,6 +16,8 @@ function reducer(state = initialState, action) {
                 projectTechStack: action.payload.projectTechStack,
                 projectUrl: action.payload.projectUrl,
                 projectType: action.payload.projectType,
+                desktopImage: action.payload.desktopImage,
+                mobileImage: action.payload.mobileImage,
                 className: action.payload.className,
                 RWD: action.payload.RWD
             }

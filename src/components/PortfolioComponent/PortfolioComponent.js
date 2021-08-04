@@ -4,6 +4,8 @@ import { ProjectHoverComponent } from "./ProjectHoverComponent";
 import { Projects } from "./Projects";
 import { ProjectViewComponent } from "./ProjectViewComponent";
 import { ProjectName } from './ProjectsData.js';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faNetworkWired, faPaintBrush } from "@fortawesome/free-solid-svg-icons";
 
 const PortfolioComponent = () => {
 
@@ -41,51 +43,75 @@ const MobileView = () => {
         web: [
             {
                 id: 1,
-                className: "web1",
+                name: "Zielonojemy",
+                fileName: "ZielonojemyDesktopMockup.png",
                 type: "web",
-                projectName: ProjectName.ZIELONOJEMY
+                projectName: ProjectName.ZIELONOJEMY,
+                projectTechStack: [
+                    "React",
+                    "Firebase",
+                    "Scss"
+                ],
             },
             {
                 id: 2,
-                className: "web2",
+                name: "CMS",
+                fileName: "BestShopDesktopMockup.png",
                 type: "web",
-                projectName: ProjectName.CMS
+                projectName: ProjectName.CMS,
+                projectTechStack: [
+                    "React",
+                    "Firebase",
+                    "Scss"
+                ],
             },
             {
                 id: 3,
-                className: "web3",
+                name: "Best Shop",
+                fileName: "web3",
                 type: "web",
-                projectName: ProjectName.BEST_SHOP
+                projectName: ProjectName.BEST_SHOP,
+                projectTechStack: [
+                    "React",
+                    "Firebase",
+                    "Scss"
+                ],
             },
             {
                 id: 4,
-                className: "web4",
+                name: "CosmoCode",
+                fileName: "web4",
                 type: "web",
-                projectName: ProjectName.COSMO_CODE
+                projectName: ProjectName.COSMO_CODE,
+                projectTechStack: [
+                    "React",
+                    "Firebase",
+                    "Scss"
+                ],
             }
         ],
         art: [
             {
                 id: 1,
-                className: "art1",
+                fileName: "art1",
                 type: "art",
-                projectName: ProjectName.PYRAMIDS
+                projectName: ProjectName.PYRAMIDS,
             },
             {
                 id: 2,
-                className: "art2",
+                fileName: "art2",
                 type: "art",
                 projectName: ProjectName.SAND_DUNES
             },
             {
                 id: 3,
-                className: "art3",
+                fileName: "art3",
                 type: "art",
                 projectName: ProjectName.ECLIPSE
             },
             {
                 id: 4,
-                className: "art4",
+                fileName: "art4",
                 type: "art",
                 projectName: ProjectName.MOUNTAINS
             }
@@ -126,7 +152,7 @@ const MobileView = () => {
     return (
         <>
             <div className="projects-wrapper">
-                <ul className="projects-column">
+                <ul className="projects-column mobile-horizontal">
                     {projectsType === "web" ?
                         <Projects projects={currentWebProjects} />
                         :
@@ -136,12 +162,12 @@ const MobileView = () => {
             </div>
             <div className="projects-nav">
                 <span className="nav-arrow left-arrow" onClick={prevPage}></span>
-                <li className="nav-item" id="web" onClick={changeType}>
-                    <i className="web-ico"></i>
+                <li className={`nav-item ${projectsType === "web" ? "active-ico" : ""}`} id="web" onClick={changeType}>
+                    <FontAwesomeIcon icon={faNetworkWired} />
                     <span>WEB</span>
                 </li>
-                <li className="nav-item" id="art" onClick={changeType}>
-                    <i className="art-ico"></i>
+                <li className={`nav-item ${projectsType === "art" ? "active-ico" : ""}`} id="art" onClick={changeType}>
+                    <FontAwesomeIcon icon={faPaintBrush} />
                     <span>ART</span>
                 </li>
                 <span className="nav-arrow right-arrow" onClick={nextPage}></span>
@@ -182,13 +208,13 @@ const TabletView = () => {
                             <div className="project-box web-box">
                                 <div className="desktop-mockup web3"></div>
                                 <div className="mobile-mockup web3-mobile"></div>
-                                <ProjectHoverComponent className="web3" />
+                                <ProjectHoverComponent projectName={ProjectName.BEST_SHOP} />
 
                             </div>
                             <div className="project-box web-box">
                                 <div className="desktop-mockup web4"></div>
                                 <div className="mobile-mockup web4-mobile"></div>
-                                <ProjectHoverComponent className="web4" />
+                                <ProjectHoverComponent projectName={ProjectName.COSMO_CODE} />
 
                             </div>
                         </div>
@@ -198,37 +224,33 @@ const TabletView = () => {
                         <div className="projects-column">
                             <div className="project-box">
                                 <div className="art art1"></div>
-                                <ProjectHoverComponent className="art1" />
-
+                                <ProjectHoverComponent projectName={ProjectName.PYRAMIDS} />
                             </div>
                             <div className="project-box">
                                 <div className="art art2"></div>
-                                <ProjectHoverComponent className="art2" />
-
+                                <ProjectHoverComponent projectName={ProjectName.SAND_DUNES} />
                             </div>
                         </div>
                         <div className="projects-column reverse-column">
                             <div className="project-box">
                                 <div className="art art3"></div>
-                                <ProjectHoverComponent className="art3" />
-
+                                <ProjectHoverComponent projectName={ProjectName.ECLIPSE} />
                             </div>
                             <div className="project-box">
                                 <div className="art art4"></div>
-                                <ProjectHoverComponent className="art4" />
-
+                                <ProjectHoverComponent projectName={ProjectName.MOUNTAINS} />
                             </div>
                         </div>
                     </>
                 }
             </div>
             <ul className="projects-nav">
-                <li className="nav-item" id="web" onClick={changeType}>
-                    <i className="web-ico"></i>
-                    <span>WEB DEV</span>
+                <li className={`nav-item ${projectsType === "web" ? "active-ico" : ""}`} id="web" onClick={changeType}>
+                    <FontAwesomeIcon icon={faNetworkWired} />
+                    <span>WEB</span>
                 </li>
-                <li className="nav-item" id="art" onClick={changeType}>
-                    <i className="art-ico"></i>
+                <li className={`nav-item ${projectsType === "art" ? "active-ico" : ""}`} id="art" onClick={changeType}>
+                    <FontAwesomeIcon icon={faPaintBrush} />
                     <span>ART</span>
                 </li>
             </ul>
@@ -247,14 +269,14 @@ const DesktopView = () => {
                 </div>
                 <div className="project-box">
                     <div className="art art1"></div>
-                    <ProjectHoverComponent className="art1" />
+                    <ProjectHoverComponent projectName={ProjectName.PYRAMIDS} />
 
                 </div>
             </div>
             <div className="projects-column reverse-column">
                 <div className="project-box">
                     <div className="art art2"></div>
-                    <ProjectHoverComponent className="web2" />
+                    <ProjectHoverComponent projectName={ProjectName.SAND_DUNES} />
 
                 </div>
                 <div className="project-box web-box">
@@ -267,25 +289,25 @@ const DesktopView = () => {
                 <div className="project-box web-box">
                     <div className="desktop-mockup web3"></div>
                     <div className="mobile-mockup web3-mobile"></div>
-                    <ProjectHoverComponent className="web3" />
+                    <ProjectHoverComponent projectName={ProjectName.BEST_SHOP} />
 
                 </div>
                 <div className="project-box">
                     <div className="art art3"></div>
-                    <ProjectHoverComponent className="art3" />
+                    <ProjectHoverComponent projectName={ProjectName.ECLIPSE} />
 
                 </div>
             </div>
             <div className="projects-column reverse-column">
                 <div className="project-box">
                     <div className="art art4"></div>
-                    <ProjectHoverComponent className="art4" />
+                    <ProjectHoverComponent projectName={ProjectName.MOUNTAINS} />
 
                 </div>
                 <div className="project-box web-box">
                     <div className="desktop-mockup web4"></div>
                     <div className="mobile-mockup web4-mobile"></div>
-                    <ProjectHoverComponent className="web4" />
+                    <ProjectHoverComponent projectName={ProjectName.COSMO_CODE} />
 
                 </div>
             </div>

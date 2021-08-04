@@ -12,14 +12,10 @@
 
     .project-view-wrapper {
         position: absolute;
-        display: flex;
-        // flex-direction: column; //// tutaj
-        flex-wrap: wrap;
         width: 100%;
         height: 100%;
         overflow: overlay;
         background: $project-hover-box-hover;
-        // padding: 60px 120px;
         padding: 60px 20px;
         z-index: 101;
 
@@ -64,23 +60,12 @@
             opacity: 0.3;
         }
 
-        .desktop-project-wrapper {
-            width: 100%; //tutaj 35
-            height: 100%;
-            max-height: 100%;
-            overflow-y: overlay;
-            border-radius: 15px;
-            // margin-right: 20px;
-            margin-bottom: 20px;
-        }
-
-        .mobile-project-wrapper {
+        .project-wrapper {
             width: 100%;
-            height: 100%;
+            height: auto;
             max-height: 100%;
             overflow-y: overlay;
             border-radius: 15px;
-            // margin-right: 20px;
             margin-bottom: 20px;
         }
 
@@ -105,7 +90,8 @@
 
             .project-description {
                 font-size: 1rem;
-                font-weight: 200;
+                font-weight: 300;
+                line-height: 20px;
                 text-align: center;
                 margin-bottom: 20px;
             }
@@ -138,52 +124,12 @@
         .art-wrapper {
             width: 100%;
             height: auto;
+        }
+    }
 
-            .art {
-                height: auto;
-            }
-
-            .art::before {
-                content: "";
-                display: block;
-                padding-top: 100%;
-            }
-        }
-        
-
-        .web-image {
-            border-radius: 15px;
-            background-position: top;
-            background-size: cover;
-        }
-        .desktop-web1 {
-            height: 800px;
-            background-image: url(/src/utils/assets/ZielonojemyFullPageDesktop.png);
-        }
-        .mobile-web1 {
-            height: 4530px;
-            background-image: url(/src/utils/assets/ZielonojemyFullPageMobile.jpg);
-        }
-        .desktop-web2 {
-            height: 530px;
-            background-image: url(/src/utils/assets/CMSLandingPhoto.jpg);
-        }
-        .desktop-web3 {
-            height: 710px;
-            background-image: url(/src/utils/assets/BestShopDesktop.png);
-        }
-        .mobile-web3 {
-            height: 2700px;
-            background-image: url(/src/utils/assets/BestShopMobile.png);
-        }
-        .desktop-web4 {
-            height: 425px;
-            background-image: url(/src/utils/assets/CosmoCodeLandingPhoto.jpg);
-        }
-        .mobile-web4 {
-            height: 410px;
-            background-image: url(/src/utils/assets/cosmomobile.jpeg);
-        }
+    .project-image {
+        width: 100%;
+        border-radius: 15px;
     }
     
     .projects-wrapper {
@@ -223,15 +169,11 @@
             border-radius: 15px;
             text-decoration: none;
             transition: background .2s linear;
+        
 
-            i {
-                display: block;
-                width: 20px;
-                height: 20px;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                margin-bottom: 7px;
+            svg {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
                 transition: transform .2s linear;
             }
             span {
@@ -239,32 +181,33 @@
                 font-weight: 400;
                 text-decoration: none;
             }
+        }
 
-            .web-ico {
-                background-image: url(/src/utils/assets/icons/HomeIconSVG.svg);
+        .nav-item:nth-of-type(1) {
+            margin-right: 5px;
+        }
+        .nav-item:nth-of-type(2) {
+            margin-left: 5px;
+        }
+
+        .active-ico {
+            background: $btn-hover-color;
+
+            svg {
                 transform: scale(1.1);
             }
-            .art-ico {
-                background-image: url(/src/utils/assets/icons/ProjectsIconSVG2.svg);
-            }
         }
+
         .nav-item:hover {
             transition: background .2s linear;
             background: $btn-hover-color;
         }
-        .nav-item:hover i {
+        .nav-item:hover svg {
             transition: transform .2s linear;
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
         .nav-item:hover .web-ico {
             transform: scale(1.3);
-        }
-        .nav-item--active .nav-item {
-            background: $btn-hover-color;
-            
-            i {
-                transform: scale(1.2);
-            }
         }
 
         .nav-arrow {
@@ -349,6 +292,10 @@
                 background-position: 5px 0;
             }
 
+            .desktop-image {
+                width: 80%;
+            }
+
             .mobile-mockup {
                 position: absolute;
                 bottom: 10px;
@@ -381,7 +328,7 @@
             }
             .web4 {
                 background-image: url(/src/utils/assets/CosmoCodeDesktopMockup.png);
-                background-position: 0px -11px;
+                background-position: -1px -14px;
             }
 
             .project-hover-box {
@@ -389,7 +336,6 @@
                 inset: 0;
                 width: 100%;
                 height: 100%;
-                background: $project-hover-box;
                 transition: background .15s ease-in;
                 border-radius: 15px;
                 cursor: pointer;
@@ -409,7 +355,6 @@
                 background: $project-hover-box-hover;
 
                 svg {
-                    // opacity: 1;
                     color: $txt-color;
                 }
             }
@@ -418,8 +363,52 @@
         .web-box {
             padding: 10px 0px;
             display: flex;
-            justify-content: center;
-            align-items: flex-end;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            h2 {
+                font-size: 1.2rem;
+                font-weight: 400;
+                margin-bottom: 5px
+            }
+
+            .tech-stack-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+                font-weight: 200;
+                color: $txt-color;
+                // margin-bottom: 20px;
+
+                li::after, li::before {
+                    content: "|";
+                    width: 10px;
+                    height: 10px;
+                    margin: 5px;
+                }
+
+                li {
+                    margin-bottom: 5px
+                }
+            }
+        }
+    }
+
+
+}
+@media (orientation: landscape) {
+    .mobile-horizontal {
+        flex-direction: row;
+        max-width: 100%;
+
+        .project-box {
+            margin: 10px;
+
+            .desktop-mockup {
+                background-position: 5px 20px;
+            }
         }
     }
 }
@@ -429,6 +418,31 @@
         padding: 60px 80px;
         height: 100vh;
     }
+
+    .project-view-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        padding: 60px;
+
+        .project-wrapper:nth-of-type(3) {
+            width: 65%;
+        }
+        .project-wrapper:nth-of-type(4) {
+            width: 30%;
+        }
+
+
+        .project-info-wrapper {
+            width: 100%;
+        }
+
+        .art-wrapper {
+            width: 100%;
+        }
+    }
+
 
     .projects-wrapper {
         flex-direction: row;
@@ -464,59 +478,40 @@
         top: 0;
 
         .nav-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 99;
             width: 60px;
             height: 60px;
             font-size: 0.7rem;
-            color: $txt-color;
-            cursor: pointer;
-            margin-top: 5px;
-            border-radius: 15px;
-            text-decoration: none;
-            transition: background .2s linear;
 
-            i {
-                display: block;
-                width: 28px;
-                height: 28px;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                margin-bottom: 7px;
-                transition: transform .2s linear;
-            }
             span {
                 font-size: 0.60rem;
                 font-weight: 400;
                 text-decoration: none;
             }
-
-            .web-ico {
-                background-image: url(/src/utils/assets/icons/HomeIconSVG.svg);
-            }
-            .art-ico {
-                background-image: url(/src/utils/assets/icons/ProjectsIconSVG2.svg);
-            }
         }
+
+        .nav-item:nth-of-type(1) {
+            margin-right: 0;
+            margin-bottom: 5px;
+        }
+        .nav-item:nth-of-type(2) {
+            margin-left: 0;
+        }
+
         .nav-item:hover {
             transition: background .2s linear;
             background: $btn-hover-color;
         }
-        .nav-item:hover i {
+        .nav-item:hover svg {
             transition: transform .2s linear;
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
-        .nav-item--active .nav-item {
-            background: $btn-hover-color;
+        // .nav-item--active .nav-item {
+        //     background: $btn-hover-color;
             
-            i {
-                transform: scale(1.2);
-            }
-        }
+        //     svg {
+        //         transform: scale(1.1);
+        //     }
+        // }
 
     }
 
@@ -525,6 +520,32 @@
 @media screen and (min-width: 1024px) {
     .portfolio-component {
         padding: 60px 120px;
+    }
+
+    .project-view-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        .project-info-wrapper {
+            width: 20%;
+            margin: 0 20px;
+        }
+
+        .art-wrapper {
+            width: 50%;
+        }
+
+        .project-wrapper:nth-of-type(3) {
+            width: 50%;
+            margin: 0 20px;
+        }
+
+        .project-wrapper:nth-of-type(4) {
+            width: 20%;
+            margin: 0 20px;
+        }
     }
 
     .projects-wrapper {
