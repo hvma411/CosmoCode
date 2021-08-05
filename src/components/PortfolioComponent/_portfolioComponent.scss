@@ -49,8 +49,8 @@
 
         .close-btn-wrapper {
             position: absolute;
-            top: 20px; // tutaj
-            right: 20px; // tutaj
+            top: 20px;
+            right: 20px;
             cursor: pointer;
         }
 
@@ -73,7 +73,6 @@
             width: 100%;
             height: auto;
             border-radius: 15px;
-            // background-color: $bg-color;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -236,27 +235,6 @@
             background-size: 30%;
         }
     }
-
-    .art {
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .art1 {
-        background-image: url(/src/utils/assets/art1.jpg);
-    }
-    .art2 {
-        background-image: url(/src/utils/assets/art2.jpg);
-    }
-    .art3 {
-        background-image: url(/src/utils/assets/art3.jpg);
-    }
-    .art4 {
-        background-image: url(/src/utils/assets/art4.jpg);
-    }
     
     .project-box {
         width: 100%;
@@ -282,53 +260,38 @@
             margin-top: 10px;
             margin-bottom: 10px;
             position: relative;
+            overflow: hidden;
 
-            .desktop-mockup {
-                position: absolute;
-                bottom: 0;
+            .text-box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .mockups-wrapper {
+                display: flex;
+                justify-content: center;
                 width: 100%;
-                height: 205px; //tutaj
-                background-size: cover;
-                background-position: 5px 0;
+                position: relative;
             }
 
             .desktop-image {
                 width: 80%;
             }
 
-            .mobile-mockup {
+            .mobile-image {
                 position: absolute;
-                bottom: 10px;
+                bottom: 3px;
                 right: 10px;
-                width: 80px;
-                height: 130px;
-                background-size: cover;
-                background-position: center;
+                max-width: 35%;
             }
 
-            .web1 {
-                background-image: url(/src/utils/assets/ZielonojemyDesktopMockup.png);
-            }
-
-            .web1-mobile {
-                background-image: url(/src/utils/assets/ZielonojemyMobileMockup.png);
-            }
-            .web3-mobile {
-                background-image: url(/src/utils/assets/BestShopMobileMockup.png);
-            }
-            .web4-mobile {
-                background-image: url(/src/utils/assets/CosmoCodeMobileMockup.png);
-            }
-
-            .web2 {
-                background-image: url(/src/utils/assets/PanelZielonojemyDesktopMockup.png);
-            }
-            .web3 {
-                background-image: url(/src/utils/assets/BestShopDesktopMockup.png);
-            }
-            .web4 {
-                background-image: url(/src/utils/assets/CosmoCodeDesktopMockup.png);
-                background-position: -1px -14px;
+            .art-image {
+                border-radius: 15px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
 
             .project-hover-box {
@@ -339,6 +302,7 @@
                 transition: background .15s ease-in;
                 border-radius: 15px;
                 cursor: pointer;
+                z-index: 2;
 
                 svg {
                     color: $bg-color;
@@ -364,13 +328,13 @@
             padding: 10px 0px;
             display: flex;
             flex-direction: column;
-            justify-content: space-around;
+            justify-content: space-evenly;
             align-items: center;
 
             h2 {
                 font-size: 1.2rem;
                 font-weight: 400;
-                margin-bottom: 5px
+                margin-bottom: 10px
             }
 
             .tech-stack-list {
@@ -380,7 +344,6 @@
                 text-align: center;
                 font-weight: 200;
                 color: $txt-color;
-                // margin-bottom: 20px;
 
                 li::after, li::before {
                     content: "|";
@@ -408,6 +371,27 @@
 
             .desktop-mockup {
                 background-position: 5px 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 420px) {
+    .projects-column {
+        .project-box {
+            .text-box {
+                position: absolute;
+                z-index: 1;
+                background: $project-hover-box;
+                width: 100%;
+                height: 100%;
+            }
+            .desktop-image {
+                width: 50%;
+            }
+            .mobile-image {
+                max-width: 25%;
+                right: 50px;
             }
         }
     }
@@ -454,6 +438,15 @@
         }
         .project-box:nth-child(2) {
             height: 40%;
+        }
+        .web-box {
+            h2 {
+                font-size: 1.5rem;
+            }
+            .tech-stack-list {
+                font-size: 1.2rem;
+                flex-wrap: wrap;
+            }
         }
     }
 
@@ -505,16 +498,7 @@
             transition: transform .2s linear;
             transform: scale(1.1);
         }
-        // .nav-item--active .nav-item {
-        //     background: $btn-hover-color;
-            
-        //     svg {
-        //         transform: scale(1.1);
-        //     }
-        // }
-
     }
-
 }
 
 @media screen and (min-width: 1024px) {
