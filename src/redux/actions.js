@@ -5,14 +5,21 @@ const switchProjectViewVisibility = () => {
 };
 
 const setVisibleProject = (data) => {
-    console.log(data)
     return {
         type: "SET_VISIBLE_PROJECT",
         payload: data
     }
 }
 
+const switchHamburgerMenuVisibility = (data) => {
+    return {
+        type: "SWITCH_HAMBURGER_MENU_VISIBILITY",
+        payload: data
+    }
+}
+
 export default {
     switchProjectViewVisibility,
-    setVisibleProject
+    setVisibleProject,
+    switchHamburgerMenuVisibility
 }

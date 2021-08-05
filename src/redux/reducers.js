@@ -21,6 +21,11 @@ function reducer(state = initialState, action) {
                 className: action.payload.className,
                 RWD: action.payload.RWD
             }
+        case "SWITCH_HAMBURGER_MENU_VISIBILITY":
+            return {
+                ...state,
+                isHamburgerMenuVisible: action.payload.isHamburgerMenuVisible
+            }
         default:
             return state;
     }

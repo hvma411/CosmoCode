@@ -3,13 +3,19 @@ import { NavLink } from "react-router-dom";
 
 const MenuComponent = () => {
 
-    const [isMenuVisible, setIsMenuVisible] = useState(true);
+    const [isMenuVisible, setIsMenuVisible] = useState(false);
 
     const menuVisiblity = () => {
         if (window.innerWidth < 1024) {
             setIsMenuVisible(false);
         } else {
             setIsMenuVisible(true);
+        }
+    }
+
+    const handleNavItemClick = () => {
+        if (window.innerWidth < 1024) {
+            setIsMenuVisible(false);
         }
     }
 
@@ -26,25 +32,25 @@ const MenuComponent = () => {
                 setIsMenuVisible={setIsMenuVisible}
             />
             <ul className={`nav-wrapper ${isMenuVisible ? "hamburger-menu--active" : "hamburger-menu--inActive"}`}>
-                <NavLink activeClassName="nav-item--active" exact to="/">
+                <NavLink onClick={handleNavItemClick} activeClassName="nav-item--active" exact to="/">
                     <li className="nav-item">
                         <i className="home-ico"></i>
                         <span>HOME</span>
                     </li>
                 </NavLink>
-                <NavLink activeClassName="nav-item--active" exact to="/about">
+                <NavLink onClick={handleNavItemClick} activeClassName="nav-item--active" exact to="/about">
                     <li className="nav-item">
                         <i className="about-ico"></i>
                         <span>ABOUT</span>
                     </li>
                 </NavLink>
-                <NavLink activeClassName="nav-item--active" exact to="/portfolio">
+                <NavLink onClick={handleNavItemClick} activeClassName="nav-item--active" exact to="/portfolio">
                     <li className="nav-item">
                         <i className="portfolio-ico"></i>
                         <span>PORTFOLIO</span>
                     </li>
                 </NavLink>
-                <NavLink activeClassName="nav-item--active" exact to="/contact">
+                <NavLink onClick={handleNavItemClick} activeClassName="nav-item--active" exact to="/contact">
                     <li className="nav-item">
                         <i className="contact-ico"></i>
                         <span>CONTACT</span>
