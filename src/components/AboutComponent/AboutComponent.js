@@ -223,6 +223,7 @@ const AboutContent = ({ contentTab, animation }) => {
                             <li>Spring Boot</li>
                             <li>Maven</li>
                             <li>Firebase</li>
+                            <li>SQL</li>
                             <li>Python basics</li>
                         </ul>
                     </h3>

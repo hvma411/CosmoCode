@@ -7,21 +7,9 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "redirects": [{
-        "source": "/about",
-        "destination": "/",
-        "type": 302
-      },
-      {
-        "source": "/portfolio",
-        "destination": "/",
-        "type": 302
-      },
-      {
-        "source": "/contact",
-        "destination": "/",
-        "type": 302
-      }
-    ]
+    "rewrites": [{
+      "source": "**",
+      "destination": "/index.html"
+    }]
   }
 }
