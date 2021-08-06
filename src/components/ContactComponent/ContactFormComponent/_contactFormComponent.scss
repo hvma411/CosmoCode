@@ -8,7 +8,41 @@
         padding: 5px;
         border-radius: 15px;
         width: 100%;
+        position: relative;
     }
+
+    .message-send-info {
+        position: absolute;
+        top: -20px;
+        text-align: center;
+        font-size: 0.9em;
+        font-weight: 200;
+        width: 100%;
+        line-height: 1.2rem;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    .active {
+        opacity: 1;
+    }
+
+    .loading-circle {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        border: 5px solid $btn-hover-color; /* Light grey */
+        border-top: 5px solid $txt-color; /* Blue */
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
     
     .contact-form--title {
         color: $txt-color;
@@ -30,6 +64,10 @@
         width: 100%;
         margin-top: 10px;
         font-size: 0.6rem;
+
+        a {
+            color: $mars-color;
+        }
     }
     
     input,
@@ -91,6 +129,19 @@
         padding: 7px;
         width: 100%;
     }
+
+    .form-errors-box {
+        width: 100%;
+        min-height: 60px;
+        display: flex;
+        flex-direction: column;
+        font-size: 0.6rem;
+        color: $mars-color;
+
+        .form-error {
+            padding: 5px;
+        }
+    }
         
     input:focus:-webkit-autofill {
         -webkit-text-fill-color: $txt-color;
@@ -139,13 +190,37 @@
     .privacy-policy--wrapper {
         font-size: 0.9rem;
     }
+
+    .message-send-info {
+        top: -40px;
+        font-size: 1.5rem;
+        font-weight: 200;
+        line-height: 1.5rem;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+
+    .active {
+        opacity: 1;
+    }
+
+    .loading-circle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .form-errors-box {
+        min-height: 90px;
+        font-size: 0.9rem;
+    }
+
     textarea {
         min-height: 200px;
     }
     button {
         padding: 10px;
         margin-top: 20px;
-        margin-bottom: 60px;
+        margin-bottom: 10px;
     }
 }
 
@@ -154,6 +229,6 @@
         max-width: 600px;
     }
     button {
-        margin-bottom: 0;
+        margin-bottom: 10px;
     }
 }

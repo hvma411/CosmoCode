@@ -12,6 +12,7 @@ import AboutComponent from "./components/AboutComponent/AboutComponent.js";
 import PortfolioComponent from "./components/PortfolioComponent/PortfolioComponent";
 import ContactComponent from "./components/ContactComponent/ContactComponent";
 import SocialMediaBar from "./components/SocialMediaBar/SocialMediaBar";
+import { PrivacyPolicyComponent } from "./components/PrivacyPolicyComponent/PrivacyPolicyComponent";
 const App = () => {
 
     const appHeight = () => {
@@ -42,6 +43,7 @@ const App = () => {
                                         <Route path="/about" component={AboutComponent} />
                                         <Route path="/portfolio" component={PortfolioComponent} />
                                         <Route path="/contact" component={ContactComponent} />
+                                        <Route path="/privacypolicy" component={PrivacyPolicyComponent} />
                                     </Switch>
                                 </CSSTransition>
                             </TransitionGroup>
