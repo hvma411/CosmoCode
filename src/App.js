@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import "./main.scss"
 import store from './redux/store.js';
 import HomeComponent from "./components/HomeComponent/HomeComponent";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import MenuComponent from "./components/MenuComponent/MenuComponent";
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import AboutComponent from "./components/AboutComponent/AboutComponent.js";
@@ -44,6 +44,9 @@ const App = () => {
                                         <Route path="/portfolio" component={PortfolioComponent} />
                                         <Route path="/contact" component={ContactComponent} />
                                         <Route path="/privacypolicy" component={PrivacyPolicyComponent} />
+                                        <Route path="*">
+                                            <Redirect to="/" />
+                                        </Route>
                                     </Switch>
                                 </CSSTransition>
                             </TransitionGroup>
