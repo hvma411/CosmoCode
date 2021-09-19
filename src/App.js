@@ -44,6 +44,9 @@ const App = () => {
                                         <Route path="/portfolio" component={PortfolioComponent} />
                                         <Route path="/contact" component={ContactComponent} />
                                         <Route path="/privacypolicy" component={PrivacyPolicyComponent} />
+                                        <Route path="*">
+                                            <Redirect to="/" />
+                                        </Route>
                                     </Switch>
                                 </CSSTransition>
                             </TransitionGroup>
