@@ -21,13 +21,13 @@ export const projectData = {
         id: 1,
         projectTitle: "ZielonoJemy",
         projectDescription: `Dietitian blog website created for my friend. You can find here a few subpages and blog part with articles. There is search function in blog part - user can search articles using tags added to articles. Whole layout design was created by me.
-                             There is also administration panel (CMS) created for content management - it's next project in my portfolio. Website is temporarily closed for my friend wish. It is possible to see website and it functionality if you just contact me.`,
+                             There is also administration panel (CMS) created for content management - it's next project in my portfolio. Website is temporarily closed for my friend wish but I prepared a demo project - click below to visit page.`,
         projectTechStack: [
             "React",
             "Firebase",
             "Scss"
         ],
-        projectUrl: "https://zielonojemy.pl/",
+        projectUrl: "https://greenblog.web.app/",
         projectType: ProjectType.WEB,
         desktopImage: IMAGE_PATH + "ZielonojemyFullPageDesktop.png",
         mobileImage: IMAGE_PATH + "ZielonojemyFullPageMobile.jpg",
