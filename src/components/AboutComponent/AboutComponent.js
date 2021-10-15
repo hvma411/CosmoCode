@@ -118,7 +118,7 @@ const AboutComponent = () => {
                     <AboutContent contentTab="history" animation={aboutTab.history.animation} />
                     <AboutContent contentTab="hobbies" animation={aboutTab.hobbies.animation} />
                     <AboutContent contentTab="experience" animation={aboutTab.experience.animation} />
-                    <ScrollMeComponent />
+                    { width < 1024 ? <ScrollMeComponent /> : "" }
                 </div>
             </div>
             { width < 1024 ? <Photo /> : null}
@@ -208,12 +208,13 @@ const AboutContent = ({ contentTab, animation }) => {
                         Front-End: <br />
                         <ul className="tech-stack-list">
                             <li>JavaScript</li>
+                            <li>TypeScript</li>
                             <li>React</li>
                             <li>React Native</li>
+                            <li>Redux</li>
+                            <li>Angular</li>
                             <li>HTML5</li>
                             <li>CSS3 (Sass)</li>
-                            <li>Redux</li>
-                            <li>Angular basics</li>
                         </ul>
                     </h3>
                     <h3>
@@ -221,7 +222,7 @@ const AboutContent = ({ contentTab, animation }) => {
                         <ul className="tech-stack-list">
                             <li>Java</li>
                             <li>Spring Boot</li>
-                            <li>Maven</li>
+                            <li>JUnit and Mockito</li>
                             <li>Firebase</li>
                             <li>SQL</li>
                             <li>Python basics</li>

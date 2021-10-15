@@ -15,9 +15,11 @@ const ContactFormComponent = () => {
         message: true
     })
 
-    const [isLoadingCircleVisible, setIsLoadingCircleVisible] = useState(false)
+    const [isLoadingCircleVisible, setIsLoadingCircleVisible] = useState(false);
 
-    const [hasMessageBeenSent, setHasMessageBeenSent] = useState(false)
+    const [hasMessageBeenSent, setHasMessageBeenSent] = useState(false);
+
+    const [messageSendingFailed, setMessageSendingFailed] = useState(false);
 
     const cleanContactForm = () => {
         setContactForm({
@@ -66,14 +68,18 @@ const ContactFormComponent = () => {
             body: JSON.stringify(contactForm)
         })
             .then(() => {
-                cleanContactForm()
-                setIsLoadingCircleVisible(false)
-                setHasMessageBeenSent(true)
+                cleanContactForm();
+                setIsLoadingCircleVisible(false);
+                setHasMessageBeenSent(true);
             })
             .then(() => {
                 setTimeout(() => {
-                    setHasMessageBeenSent(false)
+                    setHasMessageBeenSent(false);
                 }, 2000)
+            })
+            .catch(() => {
+                setMessageSendingFailed(true);
+                setIsLoadingCircleVisible(false);
             })
 
     }
@@ -88,6 +94,7 @@ const ContactFormComponent = () => {
     return (
         <form className="contact-form">
             <span className={`message-send-info ${hasMessageBeenSent ? "active" : ""}`}>Thank you for your message.<br /> I'll respond as soon as possible.</span>
+            <span className={`message-send-info ${messageSendingFailed ? "active" : ""}`}>Something went wrong :( <br /> Try again later! </span>
             <div className="input-group">
                 <input type="text" name="name" id="name" onChange={handleInputChange} value={contactForm.name} placeholder="What is your name?" />
                 <label htmlFor="name" className="form-label">What is your name?</label>
@@ -113,10 +120,6 @@ const ContactFormComponent = () => {
             </div>
         </form>
     )
-}
-
-const FormValidationErrors = () => {
-    return
 }
 
 export default ContactFormComponent;
