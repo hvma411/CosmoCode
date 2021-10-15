@@ -4,7 +4,6 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import allActions from '../../redux/actions.js';
 import { ProjectType } from './ProjectsData.js';
-import zielonojemyDesktop from '../../utils/assets/CMSLandingPhoto.jpg'
 
 export const ProjectViewComponent = () => {
 
@@ -42,6 +41,7 @@ const WebProject = ({ projectData }) => {
                     ))}
                 </ul>
                 {projectData.projectUrl ? <a href={projectData.projectUrl} target="_blank">Click here to visit website</a> : ""}
+                {projectData.repoUrl ? <a href={projectData.repoUrl} target="_blank">Click here to visit github repo</a> : ""}
             </div>
             <div className="project-wrapper ">
                 <img src={projectData.desktopImage} className="project-image" />
