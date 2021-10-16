@@ -33,6 +33,9 @@
         border: 2px solid $btn-hover-color;
         width: $width;
         height: $height;
+        -webkit-animation: planet-rotation $time linear infinite;
+        -moz-animation: planet-rotation $time linear infinite;
+        -o-animation: planet-rotation $time linear infinite;
         animation: planet-rotation $time linear infinite;
         position: absolute;
     
@@ -123,6 +126,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            -webkit-animation: planet-rotation 180s linear infinite reverse;
+            -moz-animation: planet-rotation 180s linear infinite reverse;
+            -o-animation: planet-rotation 180s linear infinite reverse;
             animation: planet-rotation 180s linear infinite reverse;
     
     

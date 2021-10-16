@@ -79,7 +79,7 @@ export const projectData = {
             "Scss",
             "Firebase",
         ],
-        projectUrl: "https://www.cosmo-code.web.app/",
+        projectUrl: "https://cosmo-code.web.app/",
         repoUrl: "https://github.com/hvma411/CosmoCode",
         projectType: ProjectType.WEB,
         desktopImage: IMAGE_PATH + "CosmoCodeLandingPhoto.jpg",

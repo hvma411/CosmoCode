@@ -140,6 +140,9 @@
             z-index: 99;
           }
           .hamburger__inner--animated {
+            -webkit-animation: hamburger-line-bigger-out .1s6;
+            -moz-animation: hamburger-line-bigger-out .1s;
+            -o-animation: hamburger-line-bigger-out .1s;
             animation: hamburger-line-bigger-out .1s;
           }
           .hamburger__inner::before,
@@ -177,6 +180,9 @@
     
      .menu--active {
         .hamburger__inner::after {
+            -webkit-animation: hamburger-line-smaller-in .1s;
+            -moz-animation: hamburger-line-smaller-in .1s;
+            -o-animation: hamburger-line-smaller-in .1s;
             animation: hamburger-line-smaller-in .1s;
             width: 0px;
          }
@@ -185,15 +191,24 @@
             transition: transform .1s linear;
         }
         .hamburger__inner {
+            -webkit-animation: hamburger-line-bigger-in .1s;
+            -moz-animation: hamburger-line-bigger-in .1s;
+            -o-animation: hamburger-line-bigger-in .1s;
             animation: hamburger-line-bigger-in .1s;
             width: 30px;
         }
      }
      .menu--inActive {
         .hamburger__inner::after {
+            -webkit-animation: hamburger-line-smaller-out .1s;
+            -moz-animation: hamburger-line-smaller-out .1s;
+            -o-animation: hamburger-line-smaller-out .1s;
             animation: hamburger-line-smaller-out .1s;
         }
         .hamburger__inner {
+            -webkit-animation: hamburger-line-bigger-out .2s;
+            -moz-animation: hamburger-line-bigger-out .2s;
+            -o-animation: hamburger-line-bigger-out .2s;
             animation: hamburger-line-bigger-out .2s;
             width: 20px;
         }

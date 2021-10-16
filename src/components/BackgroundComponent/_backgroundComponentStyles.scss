@@ -46,10 +46,10 @@
     bottom: -150px;
 
     transform-style: preserve-3d;
-    animation-name: animateSphere;
-    animation-duration: 50s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    -webkit-animation: 50s animateSphere linear infinite;
+    -moz-animation: 50s animateSphere linear infinite;
+    -o-animation: 50s animateSphere linear infinite;
+    animation: 50s animateSphere linear infinite;
 }
 
 
@@ -73,6 +73,9 @@
 
     transform: rotateX(75deg) rotateY(25deg);
 
+    -webkit-animation: orbit-rotate 10s infinite linear;
+    -moz-animation: orbit-rotate 10s infinite linear;
+    -o-animation: orbit-rotate 10s infinite linear;
     animation: orbit-rotate 10s infinite linear;
 }
 
@@ -88,20 +91,26 @@
     bottom: 200px;
 
     transform-style: preserve-3d;
-    animation-name: animateSphere;
-    animation-duration: 50s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    -webkit-animation: 50s animateSphere infinite linear;
+    -moz-animation: 50s animateSphere infinite linear;
+    -o-animation: 50s animateSphere infinite linear;
+    animation: 50s animateSphere infinite linear;
     transform: rotateY(-25deg) rotateX(-75deg) 
 }
 
 .orbit1-cover {
     z-index: 150;
     border: none;
+    -webkit-animation: none;
+    -moz-animation: none;
+    -o-animation: none;
     animation: none;
 }
 
 .orbit1-planet-cover {
+    -webkit-animation: cover-planet-rotate 10s infinite linear;
+    -moz-animation: cover-planet-rotate 10s infinite linear;
+    -o-animation: cover-planet-rotate 10s infinite linear;
     animation: cover-planet-rotate 10s infinite linear;
     border: none;
 }

@@ -11,6 +11,8 @@
         
         h3 {
             display: none;
+            color: $smb-text;
+            letter-spacing: .3px;
             font-size: 0.8rem;
             font-weight: 200;
             margin-right: 20px;
@@ -35,9 +37,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .footer-but-header {
-        display: flex;
-
+    .social-media-bar {
         h3 {
             display: block;
         }

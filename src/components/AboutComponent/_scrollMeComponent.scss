@@ -22,6 +22,9 @@
     height: 10px;
     background: $scroll-border;
     border-radius: 50%;
+    -webkit-animation: 1.3s scroll cubic-bezier(0.25, -0.55, 0.3, 1) infinite;
+    -moz-animation: 1.3s scroll cubic-bezier(0.25, -0.55, 0.3, 1) infinite;
+    -o-animation: 1.3s scroll cubic-bezier(0.25, -0.55, 0.3, 1) infinite;
     animation: 1.3s scroll cubic-bezier(0.25, -0.55, 0.3, 1) infinite;
 }
 
