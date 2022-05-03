@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import { ScrollMeComponent } from "./ScrollMeComponent";
 
 const AboutComponent = () => {
 
     const [width, setWidth] = useState(window.innerWidth);
-    const [height, setHeight] = useState(window.innerHeight);
+    const [setHeight] = useState(window.innerHeight);
 
     const updateDimensions = () => {
         setWidth(window.innerWidth);
@@ -198,7 +197,7 @@ const AboutContent = ({ contentTab, animation }) => {
             <div className={`content content--${animation}`}>
                 <h2>TECH STACK & EXPERIENCE</h2>
                 <h3>
-                    I am currently working as a Junior Full-Stack Developer at T-Mobile since November 2020.
+                    I am currently working as a Junior Front-end Developer at Lastminute.com.
                 </h3>
                 <h3>
                     I have about {getFullExperience()} years of non-commercial and {getCommercialExperience()} {getCorrectYearWord()} of commercial programming experience. You can find a few of my dev and art projects by clicking "portfolio" in menu. To see more projects go to my github account by clicking icon in top, right corner.
