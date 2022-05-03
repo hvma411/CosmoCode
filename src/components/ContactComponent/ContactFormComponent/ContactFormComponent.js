@@ -59,7 +59,7 @@ const ContactFormComponent = () => {
 
     const sendEmail = () => {
         setIsLoadingCircleVisible(true);
-        fetch('https://cosmo-code-backend.herokuapp.com/', {
+        fetch('/api/v1/sendQuestion', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
