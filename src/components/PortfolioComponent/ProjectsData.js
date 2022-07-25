@@ -2,7 +2,7 @@ const IMAGE_PATH = "./src/utils/assets/"
 
 export const ProjectName = {
     ZIELONOJEMY: "ZielonoJemy",
-    CMS: "CMS",
+    ZDROWO_I_POZYTYWNIE: "Zdrowo i Pozytywnie",
     BEST_SHOP: "BestShop",
     COSMO_CODE: "CosmoCode",
     PYRAMIDS: "Pyramids",
@@ -21,7 +21,7 @@ export const projectData = {
         id: 1,
         projectTitle: "ZielonoJemy",
         projectDescription: `Dietitian blog website created for my friend. You can find here a few subpages and blog part with articles. There is search function in blog part - user can search articles using tags added to articles. Whole layout design was created by me.
-                             There is also administration panel (CMS) created for content management - it's next project in my portfolio. Website is temporarily closed for my friend wish but I prepared a demo project - click below to visit website.`,
+                             Website is temporarily closed for my friend wish but I prepared a demo project - click below to visit website.`,
         projectTechStack: [
             "React",
             "Firebase",
@@ -35,23 +35,23 @@ export const projectData = {
         RWD: true,
 
     },
-    "CMS": {
+    "Zdrowo i Pozytywnie": {
         id: 2,
-        projectTitle: "CMS",
-        projectDescription: `My proprietary content management system app created for web apps/blogs. App was created only with front-end (React and SCSS) and It uses Firebase as back-end.
-                             App functions: main desktop with statistics, add/edit/delete articles, added articles list view, add article without publishing it - publish it on click, promoted/featured articles, promoted/featured articles list - stop promoting articles, timetable of automatically publishing articles (in progress), simple to do list (in progress), settings of web app - more than content management settings (in progress).
-                             App already works but new features are still in progress. This system will be used as a main content management system for websites that I create for customers`,
+        projectTitle: "Zdrowo i Pozytywnie",
+        projectDescription: `Dietetitian website with recipes and shop. You can find here a few subpages, recipes page and shop with diet plans. There is also user module for customers. Customers can create account during purchase process to have easy access to their diet plans.
+							 Website is managed by CMS created with Angular - adding recipes, managing users and adding diet plans for customer.`,
         projectTechStack: [
             "React",
-            "Firebase",
-            "Scss"
+            "Express",
+            "Angular",
+			"Postgres"
         ],
-        projectUrl: "",
+        projectUrl: "https://www.zdrowoipozytywnie.pl",
         repoUrl: "",
         projectType: ProjectType.WEB,
-        desktopImage: IMAGE_PATH + "CMSLandingPhoto.jpg",
-        mobileImage: "",
-        RWD: false
+        desktopImage: IMAGE_PATH + "ZipLandingPhoto.png",
+        mobileImage: IMAGE_PATH + "ZipMobile.png",
+        RWD: true
     },
     "BestShop": {
         id: 3,

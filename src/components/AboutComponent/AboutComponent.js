@@ -165,7 +165,7 @@ const AboutContent = ({ contentTab, animation }) => {
                 </h3>
                 <h3>
                     It was a hard decision but thought about programming possibilities to bring my ideas and dreams to reality was convincing.
-                    I have been learning programming about 2 years, after that I changed my position in company and finally I work as full-stack developer. It was another big step in my life and great achievement also.
+                    I have been learning programming about 2 years, after that I changed my position in company and finally I have started working as a programmer. It was another big step in my life and great achievement also.
                 </h3>
             </div>
         )
@@ -200,7 +200,7 @@ const AboutContent = ({ contentTab, animation }) => {
                     I am currently working as a Junior Front-end Developer at Lastminute.com.
                 </h3>
                 <h3>
-                    I have about {getFullExperience()} years of non-commercial and {getCommercialExperience()} {getCorrectYearWord()} of commercial programming experience. You can find a few of my dev and art projects by clicking "portfolio" in menu. To see more projects go to my github account by clicking icon in top, right corner.
+                    I have about {getFullExperience()} years of non-commercial and {getCommercialExperience()} {getCorrectYearWord()} of commercial programming experience. You can find a few of my dev and art projects by clicking "portfolio" in menu. To see some code go to my github account by clicking icon in top, right corner.
                 </h3>
                 <div className="tech-stack-wrapper">
                     <h3>
@@ -209,21 +209,23 @@ const AboutContent = ({ contentTab, animation }) => {
                             <li>JavaScript</li>
                             <li>TypeScript</li>
                             <li>React</li>
-                            <li>React Native</li>
                             <li>Redux</li>
                             <li>Angular</li>
                             <li>HTML5</li>
                             <li>CSS3 (Sass)</li>
+							<li>Jest</li>
                         </ul>
                     </h3>
                     <h3>
                         Back-End: <br />
                         <ul className="tech-stack-list">
-                            <li>Java</li>
-                            <li>Spring Boot</li>
-                            <li>JUnit and Mockito</li>
-                            <li>Firebase</li>
+                            <li>Node.js</li>
+                            <li>Nest.js</li>
                             <li>SQL</li>
+							<li>Postgres</li>
+                            <li>Firebase</li>
+							<li>Java</li>
+							<li>Spring boot</li>
                             <li>Python basics</li>
                         </ul>
                     </h3>

@@ -51,10 +51,10 @@ const projects = {
         },
         {
             id: 2,
-            name: "CMS",
-            fileName: "PanelZielonojemyDesktopMockup.png",
+            name: "Zdrowo i Pozytywnie",
+            fileName: "ZipDesktopMockup.png",
             type: "web",
-            projectName: ProjectName.CMS,
+            projectName: ProjectName.ZDROWO_I_POZYTYWNIE,
             projectTechStack: [
                 "React",
                 "Firebase",
@@ -269,9 +269,9 @@ const DesktopView = () => {
                 </div>
                 <div className="project-box web-box">
                     <div className="text-box">
-                        <h2>{ProjectName.CMS}</h2>
+                        <h2>{ProjectName.ZDROWO_I_POZYTYWNIE}</h2>
                         <ul className="tech-stack-list">
-                            {getProjectTechStack(ProjectName.CMS)
+                            {getProjectTechStack(ProjectName.ZDROWO_I_POZYTYWNIE)
                                 .map((el, idx) => (
                                     <li key={idx}>
                                         {el}
@@ -280,9 +280,9 @@ const DesktopView = () => {
                         </ul>
                     </div>
                     <div className="mockups-wrapper">
-                        <img src="./src/utils/assets/PanelZielonojemyDesktopMockup.png" className="desktop-image" />
+                        <img src="./src/utils/assets/ZipDesktopMockup.png" className="desktop-image" />
                     </div>
-                    <ProjectHoverComponent projectName={ProjectName.CMS} />
+                    <ProjectHoverComponent projectName={ProjectName.ZDROWO_I_POZYTYWNIE} />
                 </div>
             </div>
             <div className="projects-column">

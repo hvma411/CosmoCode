@@ -30,6 +30,7 @@ export const ProjectViewComponent = () => {
 }
 
 const WebProject = ({ projectData }) => {
+	console.log(projectData)
     return (
         <>
             <div className="project-info-wrapper">
